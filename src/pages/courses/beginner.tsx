@@ -1,14 +1,13 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
-import {  Accordion, Badge, Box, Button, Card, CardSection, Center, Container, createStyles, Grid, Group, List, Paper, Stack, Tabs, Text, Textarea, TextInput, } from '@mantine/core';
+import {  Accordion, Badge, Button, Card, Center, Container, createStyles, Grid, Group, List, Paper, Stack, Tabs, Text, Textarea, TextInput, } from '@mantine/core';
 import { useViewportSize } from '@mantine/hooks';
 
 import MainLayout from '../../layouts/mainLayout/mainLayout';
 import { colors } from '../../constants/colors';
 import FooterLinks from '../../components/footer/footer';
 import { footerData } from '../../constants/footer';
-import { relative } from 'node:path/win32';
 import { IconArrowLeft, IconBook, IconClipboard, IconPlus } from '@tabler/icons';
 
 const useStyles = createStyles((theme) => ({

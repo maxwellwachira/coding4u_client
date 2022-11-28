@@ -4,17 +4,17 @@ export const footerData = [
         links: [
             { id: 0, link: '/', label: 'Home' },
             { id: 1, link: '/about', label: 'About' },
-            { id: 2, link: '/find-a-home', label: 'Home Finder' },
-            { id: 3, link: '/faq', label: 'FAQ' }
+            { id: 2, link: '/courses', label: 'Courses' },
+            { id: 3, link: '/contact', label: 'Contact' }
         ]
     },
     {
         title: 'Courses', 
         links: [
-            { id: 0, link: '/contact', label: 'all courses' },
-            { id: 1, link: 'mailto:', label: 'PCB Design' },
-            { id: 2, link: 'mailto:', label: 'Firmware' },
-            { id: 2, link: 'mailto:', label: 'IoT' },
+            { id: 0, link: '/courses', label: 'all courses' },
+            { id: 1, link: '/courses:', label: 'Beginner' },
+            { id: 2, link: '/courses:', label: 'Intermediate' },
+            { id: 2, link: '/courses:', label: 'Advanced' },
         ]
     }, 
     {

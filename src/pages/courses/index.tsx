@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
-import {  Box, Button, Card, CardSection, Center, Container, createStyles, Grid, Paper, Stack, Text, Textarea, TextInput, } from '@mantine/core';
+import {  Box, Button, Card, Center, Container, createStyles, Grid, Stack, Text, Textarea, TextInput, } from '@mantine/core';
 import { useViewportSize } from '@mantine/hooks';
 
 import MainLayout from '../../layouts/mainLayout/mainLayout';
@@ -77,11 +77,16 @@ const Courses: NextPage = () => {
                                         />
                                     </Center>
                                 </Card.Section>
-                                <Text align="center" size={24} weight={600} color={`${colors.primaryColor}`}>Starter Package</Text>
+                                <Text align="center" size={24} weight={600} color={`${colors.primaryColor}`}>Beginner Package</Text>
                                 <Text mt={20}>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras facilisis eros nisl, in pellentesque dolor facilisis vel. Etiam euismod, ligula eget sollicitudin elementum, sapien ipsum sodales urna, at imperdiet nunc neque et quam. Duis blandit dolor et rutrum congue. </Text>
                                 <Center>
-                                    <Button className={classes.moreButton} size="md" >
+                                    <Button 
+                                        className={classes.moreButton} 
+                                        size="md" 
+                                        component='a'
+                                        href='/courses/beginner'
+                                    >
                                         See More
                                     </Button>
                                 </Center>
@@ -105,7 +110,12 @@ const Courses: NextPage = () => {
                                 <Text mt={20}>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras facilisis eros nisl, in pellentesque dolor facilisis vel. Etiam euismod, ligula eget sollicitudin elementum, sapien ipsum sodales urna, at imperdiet nunc neque et quam. Duis blandit dolor et rutrum congue. </Text>
                                 <Center>
-                                    <Button className={classes.moreButton} size="md" >
+                                    <Button 
+                                        className={classes.moreButton} 
+                                        size="md" 
+                                        component='a'
+                                        href='/courses/intermediate'
+                                    >
                                         See More
                                     </Button>
                                 </Center>
@@ -129,7 +139,12 @@ const Courses: NextPage = () => {
                                 <Text mt={20}>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras facilisis eros nisl, in pellentesque dolor facilisis vel. Etiam euismod, ligula eget sollicitudin elementum, sapien ipsum sodales urna, at imperdiet nunc neque et quam. Duis blandit dolor et rutrum congue. </Text>
                                 <Center>
-                                    <Button className={classes.moreButton} size="md" >
+                                    <Button 
+                                        className={classes.moreButton} 
+                                        size="md" 
+                                        component='a'
+                                        href='/courses/advanced'
+                                    >
                                         See More
                                     </Button>
                                 </Center>

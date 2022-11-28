@@ -248,13 +248,13 @@ const Home: NextPage = () => {
              In hac habitasse platea dictumst. Nunc quis elit in velit viverra vestibulum. Sed id urna et erat venenatis aliquam. Ut aliquet risus in nisi elementum, ac vulputate neque maximus. Ut nisi lorem, scelerisque rhoncus mattis eu, vehicula a mi. Interdum et malesuada fames ac ante ipsum primis in faucibus. In finibus, leo at consequat consectetur, mauris odio malesuada est, eget imperdiet nunc mi eu massa. Proin sit amet nulla leo. Donec vitae blandit odio. Curabitur justo eros, porttitor eu quam a, interdum scelerisque eros.
           </Text>
           <Text className={`${classes.primaryText}`} mt="xl" component='h1' size={27}>Starter Package</Text>
-          <Grid gutter={70}>
+          <Grid gutter={50}>
             <Grid.Col md={6}>
               <Center>
                 <Image 
                   src='/scratch.svg'
-                  height={350}
-                  width={400}
+                  height={width >= 768 ? 350 : 300}
+                  width={width >= 768 ? 400 : 300}
                   alt="Starter package"
                 />
               </Center>
@@ -290,8 +290,8 @@ const Home: NextPage = () => {
               <Center>
                 <Image 
                   src="/intermediate.svg"
-                  height={350}
-                  width={400}
+                  height={width >= 768 ? 350 : 300}
+                  width={width >= 768 ? 400 : 300}
                   alt="Intermediate"
                 />
               </Center>
@@ -303,8 +303,8 @@ const Home: NextPage = () => {
               <Center>
                 <Image 
                   src={iot}
-                  height={350}
-                  width={400}
+                  height={width >= 768 ? 350 : 300}
+                  width={width >= 768 ? 400 : 300}
                   alt="IoT"
                 />
               </Center>

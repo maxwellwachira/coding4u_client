@@ -114,7 +114,7 @@ const Home: NextPage = () => {
                 </Stack>
                 <Button
                   component='a'
-                  href='#'
+                  href='/courses'
                   className={classes.exploreButton}
                 >
                   Get started
@@ -247,7 +247,7 @@ const Home: NextPage = () => {
           <Text my="xl">
              In hac habitasse platea dictumst. Nunc quis elit in velit viverra vestibulum. Sed id urna et erat venenatis aliquam. Ut aliquet risus in nisi elementum, ac vulputate neque maximus. Ut nisi lorem, scelerisque rhoncus mattis eu, vehicula a mi. Interdum et malesuada fames ac ante ipsum primis in faucibus. In finibus, leo at consequat consectetur, mauris odio malesuada est, eget imperdiet nunc mi eu massa. Proin sit amet nulla leo. Donec vitae blandit odio. Curabitur justo eros, porttitor eu quam a, interdum scelerisque eros.
           </Text>
-          <Text className={`${classes.primaryText}`} mt="xl" component='h1' size={27}>Starter Package</Text>
+          <Text className={`${classes.primaryText}`} mt="xl" component='h1' size={27}>Beginner Package</Text>
           <Grid gutter={50}>
             <Grid.Col md={6}>
               <Center>
@@ -265,7 +265,7 @@ const Home: NextPage = () => {
              </Text>
              <Button
               component='a'
-              href='#'
+              href='/courses/beginner'
               className={classes.exploreButton}
              >
               Explore Course
@@ -280,7 +280,7 @@ const Home: NextPage = () => {
              </Text>
              <Button
               component='a'
-              href='#'
+              href='/courses/intermediate'
               className={classes.exploreButton}
              >
               Explore Courses
@@ -315,7 +315,7 @@ const Home: NextPage = () => {
              </Text>
              <Button
               component='a'
-              href='#'
+              href='/courses/advanced'
               className={classes.exploreButton}
              >
               Explore Courses

@@ -3,8 +3,7 @@ import { getCookie } from "cookies-next";
 const env = process.env.NEXT_PUBLIC_ENV as string;
 
 export const urls = {
-    baseUrl:'http://localhost:5000',
-    tutorLms: 'https://mygrannyslove.com/wp-json/tutor/v1',
+    baseUrl:'https://api.coding-4u.com',
     zoomBaseUrl: 'https://api.zoom.us/v2'
 }
 

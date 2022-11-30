@@ -1,11 +1,14 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
-import {  Anchor, Button, Checkbox, Container, createStyles, Divider, Grid, Group, Paper, PasswordInput, Stack, Text, TextInput, } from '@mantine/core';
-import { useViewportSize } from '@mantine/hooks';
+import {  Anchor, Button, Container, createStyles, Divider, Grid, Group, Notification, Paper, PasswordInput, Stack, Text, TextInput, } from '@mantine/core';
+import { useRouter } from 'next/router';
+import { IconX } from '@tabler/icons';
 
 import MainLayout from '../../layouts/mainLayout/mainLayout';
 import { colors } from '../../constants/colors';
+import { useLoginUser } from '../../features/authentication';
+import { useEffect } from 'react';
 
 
 const useStyles = createStyles((theme) => ({
@@ -27,7 +30,7 @@ const useStyles = createStyles((theme) => ({
         textAlign: "center",
         color:  theme.colors.gray[0],
         fontWeight: 600,
-        margin: '30px 0',
+        margin: '20px 0',
         boxShadow: '0 6px 10px 0 rgba(0,0,0,0.2)',
         '&:hover': {
            opacity: 0.7,
@@ -38,14 +41,30 @@ const useStyles = createStyles((theme) => ({
       },
 }));
 
-const Register: NextPage = () => {
+const Login: NextPage = () => {
     const { classes } = useStyles();
-    const { width } = useViewportSize();
+    const router = useRouter()
+    const { form, handleSubmit, clearResponse, response, userMeData, loading } = useLoginUser();
 
+    if (response === "success") {
+        switch (userMeData?.role) {
+          case 'student':
+            router.push('/courses').then(() => router.reload());
+            break;
+          case 'admin':
+            router.push('/admin').then(() => router.reload());
+            break;
+          case 'tutor':
+            router.push('/tutor/uploads').then(() => router.reload());
+            break;
+          default:
+            break;
+        }
+    }
     return (
         <>
         <Head>
-            <title>Coding4U | Register</title>
+            <title>Coding4U | Login</title>
             <meta name="description" content="Coding4U Register Page" />
             <link rel="icon" href="/favicon.ico" />
         </Head>
@@ -65,8 +84,13 @@ const Register: NextPage = () => {
                             </Stack>
                         </Grid.Col>
                         <Grid.Col md={6} p={40}>
+                        {response === "success" ? "" : response ? (
+                            <Notification icon={<IconX size={18} />} color="red" title="Error" onClose={clearResponse}>
+                                {response}
+                            </Notification>
+                        ): ""}  
                             <Divider label="Welcome back" labelPosition="center" my="lg" />
-                            <form>
+                            <form onSubmit={form.onSubmit(() => handleSubmit())}>
                                 <Stack mt={30}>  
                                     <TextInput
                                         required
@@ -74,6 +98,8 @@ const Register: NextPage = () => {
                                         placeholder="hello@gmail.com"
                                         radius={15}
                                         mt={15}
+                                        onChange={(event) => form.setFieldValue('email', event.currentTarget.value)}
+                                        error={form.errors.email && 'Invalid email'}
                                     />
 
                                     <PasswordInput
@@ -82,27 +108,30 @@ const Register: NextPage = () => {
                                         placeholder="Your password"
                                         radius={15}
                                         mt={15}
+                                        onChange={(event) => form.setFieldValue('password', event.currentTarget.value)}
+                                        error={form.errors.password && 'Password should include at least 6 characters'}
                                     />
+                                    <Anchor
+                                        href='/auth/forgot-password'
+                                        color="dimmed"
+                                        size="xs"
+                                    >
+                                        Forgot Password?
+                                    </Anchor>    
 
+                                    <Group position="apart" mt="sm">
+                                    <Anchor
+                                        href='/auth/register'
+                                        color="dimmed"
+                                        size="xs"
+                                    >
+                                        Don't have an account? Register
+                                    </Anchor>
+                                    <Button type="submit" className={classes.submitButton} size="md" loading={loading}>Login</Button>
+                                    </Group>
                                 </Stack>
 
-                                <Group position="apart" mt="xl">
-                                <Anchor
-                                    href='sign-up'
-                                    color="dimmed"
-                                    size="xs"
-                                >
-                                    Don't have an account? Register
-                                </Anchor>
-                                <Button type="submit" className={classes.submitButton} size="md">Login</Button>
-                                </Group>
-                                <Anchor
-                                    href='forgot-password'
-                                    color="dimmed"
-                                    size="xs"
-                                >
-                                    Forgot Password?
-                                </Anchor>    
+                                
                             </form>
                         </Grid.Col>
                     </Grid>
@@ -113,4 +142,4 @@ const Register: NextPage = () => {
     );
 }
 
-export default Register;
+export default Login;

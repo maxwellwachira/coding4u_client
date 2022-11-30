@@ -1,7 +1,10 @@
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 import {  Accordion, Badge, Button, Card, Center, Container, createStyles, Grid, Group, List, Stack, Tabs, Text, } from '@mantine/core';
+import { useRouter } from 'next/router';
 import { useViewportSize } from '@mantine/hooks';
 
 import MainLayout from '../../layouts/mainLayout/mainLayout';
@@ -9,6 +12,9 @@ import { colors } from '../../constants/colors';
 import FooterLinks from '../../components/footer/footer';
 import { footerData } from '../../constants/footer';
 import { IconArrowLeft, IconBook, IconClipboard, IconPlus } from '@tabler/icons';
+import { urls } from '../../constants/urls';
+import { useAuthContext } from '../../features/authentication';
+import { setCookie } from 'cookies-next';
 
 const useStyles = createStyles((theme) => ({
     cardShadow: {
@@ -45,6 +51,75 @@ const useStyles = createStyles((theme) => ({
 const Intermediate: NextPage = () => {
     const { classes } = useStyles();
     const { width } = useViewportSize();
+    const { userMe } = useAuthContext();
+    const [ loading, setLoading ] = useState(false);
+    const [response, setResponse] = useState('');
+    const [enrolled, setEnrolled] = useState(false);
+    const router = useRouter();
+
+    const enroll = async(UserId: string, CourseId: string) => {
+        try {
+            const { status } = await axios.post(`${urls.baseUrl}/enrolment`, {UserId, CourseId});
+            if (status === 201){
+                setResponse("success");
+                return {
+                    message: "success"
+                };
+            }
+        } catch (error) {
+            console.log(error);
+            setResponse("error");
+            return {
+                message: "error"
+            };
+        }
+    }
+
+    const isEnrolled = async() => {
+        try {
+            const { data } = await axios.get(`${urls.baseUrl}/enrolment/course/2/user/${userMe.id}`);
+            if ( data.exists ) {
+                setEnrolled(true);
+            }else {
+                setEnrolled(false);
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    const onClick = async() => {
+        //Check if role is admin or tutor or course pricing is free
+        setLoading(true);
+        if (userMe.role === "admin" || userMe.role === "tutor"){
+            const enrolment = await enroll(userMe.id, '1');
+            if (enrolment?.message === "success"){
+                router.push("/students/courses");
+            }
+        }else {
+            try {
+                const pesapalData = {
+                    amount : 15000,
+                    email: userMe.email,
+                    firstName: userMe.firstName,
+                    lastName: userMe.lastName                   
+                };
+                const { data } = await axios.post(`${urls.baseUrl}/pesapal/iframe`, pesapalData);
+                if(Number(data.status) === 200){
+                    setCookie('order_tracking_id', data.order_tracking_id);
+                    router.push(data.redirect_url);
+                    setLoading(false);                  
+                }
+            } catch (error) {
+                console.log(error);
+                setLoading(false);  
+            }
+        }
+    }
+
+    useEffect(() => {
+        isEnrolled();
+    }, []);
 
     return (
         <>
@@ -229,9 +304,16 @@ const Intermediate: NextPage = () => {
                                 <Text mt={20}>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras facilisis eros nisl, Explore Learn Innovate</Text>
                                 <Center>
-                                    <Button className={classes.enrolButton} size="md" >
-                                       Enrol
-                                    </Button>
+                                    {
+                                        enrolled ?
+                                        <Button className={classes.enrolButton} size="md" component='a' href='/students'>
+                                           Continue Learning
+                                        </Button> :
+
+                                        <Button className={classes.enrolButton} size="md" onClick={onClick} loading={loading}>
+                                            Enrol
+                                        </Button>
+                                    }
                                 </Center>
                             </Card>
                         </Stack>

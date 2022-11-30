@@ -5,6 +5,7 @@ import {
   Burger,
   Divider,
   Drawer,
+  Group,
   Header,
   MediaQuery,
   Navbar,
@@ -106,10 +107,10 @@ const MainLayout = ({ children }: Props) => {
                 <Space h="xs"/>
                 <Anchor className={`${classes.navitem} ${router.pathname === "/contact" ? classes.active : "" }`} href="/contact">Contact</Anchor>
                 {auth ? <Anchor  className={classes.navitem} href={userMe.role === "student" ? "/students" : "/admin"} mt="sm">Dashboard</Anchor> :
-                <div>
+                <Group mt="lg">
                   <Anchor className={`${classes.navitem} ${classes.signin} ${router.pathname === "/auth/login" ? classes.activeSignIn : "" }`} href="/auth/login" >Sign In</Anchor>
                   <Anchor className={`${classes.navitem} ${classes.signup} ${router.pathname === "/auth/register" ? classes.activeSignUp : "" }`} href="/auth/register">Sign Up</Anchor>
-                </div>
+                </Group>
                 }
               </div>
             </Drawer>

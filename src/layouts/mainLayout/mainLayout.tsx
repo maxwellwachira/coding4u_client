@@ -10,13 +10,13 @@ import {
   Navbar,
   Space,
 } from "@mantine/core";
-import { useViewportSize } from '@mantine/hooks';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 
 import { useStyles } from './mainLayout.styles';
 import logo from '../../assets/logo.jpeg';
 import { colors } from '../../constants/colors';
+import { useAuthContext } from '../../features/authentication';
 
 type Props = {
   children: ReactNode;
@@ -24,6 +24,7 @@ type Props = {
 
 const MainLayout = ({ children }: Props) => {
   const { classes } = useStyles();
+  const { auth, userMe } = useAuthContext();
   const [opened, setOpened] = useState(false);
   const router = useRouter();
 
@@ -70,10 +71,12 @@ const MainLayout = ({ children }: Props) => {
               <Anchor className={`${classes.navitem} ${router.pathname.includes("/courses") ? classes.active : "" }`} href="/courses">Courses</Anchor>
               <Anchor className={`${classes.navitem} ${router.pathname === "/about" ? classes.active : "" }`} href="/about">About</Anchor>
               <Anchor className={`${classes.navitem} ${router.pathname === "/contact" ? classes.active : "" }`} href="/contact">Contact</Anchor>
+              {auth ? <Anchor  className={classes.navitem} href={userMe.role === "student" ? "/students" : "/admin"}>Dashboard</Anchor> :
               <div>
                 <Anchor className={`${classes.navitem} ${classes.signin} ${router.pathname === "/auth/login" ? classes.activeSignIn : "" }`} href="/auth/login" >Sign In</Anchor>
                 <Anchor className={`${classes.navitem} ${classes.signup} ${router.pathname === "/auth/register" ? classes.activeSignUp : "" }`} href="/auth/register">Sign Up</Anchor>
               </div>
+              }
             </div>
           </div>
         </Header>}
@@ -102,8 +105,12 @@ const MainLayout = ({ children }: Props) => {
                 <Anchor className={`${classes.navitem} ${router.pathname === "/about" ? classes.active : "" }`} href="/about">About</Anchor>
                 <Space h="xs"/>
                 <Anchor className={`${classes.navitem} ${router.pathname === "/contact" ? classes.active : "" }`} href="/contact">Contact</Anchor>
-                <Anchor className={`${classes.navitem} ${classes.signin} ${router.pathname === "/auth/login" ? classes.activeSignIn : "" }`} href="/auth/login" >Sign In</Anchor>
-                <Anchor className={`${classes.navitem} ${classes.signup} ${router.pathname === "/auth/register" ? classes.activeSignUp : "" }`} href="/auth/register">Sign Up</Anchor>
+                {auth ? <Anchor  className={classes.navitem} href={userMe.role === "student" ? "/students" : "/admin"} mt="sm">Dashboard</Anchor> :
+                <div>
+                  <Anchor className={`${classes.navitem} ${classes.signin} ${router.pathname === "/auth/login" ? classes.activeSignIn : "" }`} href="/auth/login" >Sign In</Anchor>
+                  <Anchor className={`${classes.navitem} ${classes.signup} ${router.pathname === "/auth/register" ? classes.activeSignUp : "" }`} href="/auth/register">Sign Up</Anchor>
+                </div>
+                }
               </div>
             </Drawer>
         </Navbar>}

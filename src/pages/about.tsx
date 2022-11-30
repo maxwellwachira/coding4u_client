@@ -82,10 +82,10 @@ const About: NextPage = () => {
                         <form className={classes.subscribeWidth}>
                             <TextInput 
                                 mt="xl"
-                                placeholder={`        Enter Your Email`}
-                                rightSection={<Button radius={"lg"} size="lg" style={{background: `${colors.primaryColor}`}}>Subscribe</Button>}
+                                placeholder={`     Enter Your Email`}
+                                rightSection={<Button radius={"lg"} size="md" style={{background: `${colors.primaryColor}`}}>Subscribe</Button>}
                                 radius="lg"
-                                size="lg"
+                                size="md"
                             />
                         </form>
                     </Grid.Col>

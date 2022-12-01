@@ -110,13 +110,12 @@ const About: NextPage = () => {
                                               <IconCircleCheck size={16} />
                                             </ThemeIcon>
                                           }
-                                          mb="sm"
                                     >
-                                        <List.Item>Sales & Marketing</List.Item>
+                                        <List.Item>Sales & Marketing Professional</List.Item>
                                         <List.Item>Enterprise Sales Manager - Airtel Kenya for 7 years</List.Item>
-                                        <List.Item>Entreprenuer - Real Estate, crypto & forex</List.Item>
-                                        <List.Item>Cryptocurrency Educator</List.Item>
-                                        <List.Item>Founder, Beyondfiat Academy</List.Item>
+                                        <List.Item>Entreprenuer - Real Estate, Crypto & Forex</List.Item>
+                                        <List.Item>Founder, Beyondfiat Crypto Academy</List.Item>
+                                        <List.Item>Cryptocurrency Investor, Educator & Trainer</List.Item>
                                     </List>
                                 </Card>
                             </Stack>
@@ -143,10 +142,11 @@ const About: NextPage = () => {
                                               <IconCircleCheck size={16} />
                                             </ThemeIcon>
                                           }
+                                          mb="xl"
                                     >
                                         <List.Item>Software Engineer</List.Item>
                                         <List.Item>Tech Entreprenuer</List.Item>
-                                        <List.Item>Founder, Atego</List.Item>
+                                        <List.Item>Founder, Atego School</List.Item>
                                         <List.Item>Web3 & Blockchain expert</List.Item>
                                         <List.Item>Bsc. Mechatronics Eng.</List.Item>
                                         <List.Item>Business Management - King's College London</List.Item>

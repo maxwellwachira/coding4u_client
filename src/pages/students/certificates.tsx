@@ -1,13 +1,24 @@
 import {Card, Container, Stack, Text } from '@mantine/core';
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 
 import { StudentLayout } from '../../layouts/studentLayout/studentLayout';
 import {  IconTrophy } from '@tabler/icons';
 import { colors } from '../../constants/colors';
+import { useAuthContext } from '../../features/authentication';
 
 
 const Certificates: NextPage = () => {
+    const { auth } = useAuthContext();
+    const router = useRouter();
+
+    useEffect(() => {
+        if(!auth) router.push('/auth/logout');
+    }, [])
+
+    if(!auth) return <></>;
 
     return (
         <>

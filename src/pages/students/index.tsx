@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
-import { Card, Center, Container, createStyles, Grid, Group, Stack, Text } from '@mantine/core';
+import { Card, Center, Container, Grid, Stack, Text } from '@mantine/core';
 import type { NextPage } from 'next';
 import axios from 'axios';
 import { getCookie } from 'cookies-next';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 
 import { StudentLayout } from '../../layouts/studentLayout/studentLayout';
 import { colors } from '../../constants/colors';
@@ -24,7 +25,8 @@ interface EnrolmentData {
 
 const StudentDashboard: NextPage = () => {
     const [enrolmentData, setEnrolmentData] = useState<EnrolmentData | null>(null);
-    const { userMe } = useAuthContext();
+    const { auth, userMe } = useAuthContext();
+    const router = useRouter();
     let token = getCookie('accessToken');
 
     const getGreetings = () => {
@@ -53,8 +55,11 @@ const StudentDashboard: NextPage = () => {
     }
 
     useEffect(() => {
+        if(!auth) router.push('/auth/logout');
         getEnrolments();
     }, [])
+
+    if(!auth) return <></>;
 
     return (
         <>

@@ -52,7 +52,7 @@ const useStyles = createStyles((theme) => ({
 const Advanced: NextPage = () => {
     const { classes } = useStyles();
     const { width } = useViewportSize();
-    const { userMe } = useAuthContext();
+    const { auth, userMe } = useAuthContext();
     const [loading, setLoading] = useState(false);
     const [response, setResponse] = useState('');
     const [enrolled, setEnrolled] = useState(false);
@@ -90,6 +90,8 @@ const Advanced: NextPage = () => {
     }
 
     const onClick = async () => {
+        //check if auth otherwise direct to login page
+        if(!auth) router.push('/auth/login').then(() => router.reload());
         //Check if role is admin or tutor or course pricing is free
         setLoading(true);
         if (userMe.role === "admin" || userMe.role === "tutor") {

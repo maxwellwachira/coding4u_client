@@ -51,7 +51,7 @@ const useStyles = createStyles((theme) => ({
 const Intermediate: NextPage = () => {
     const { classes } = useStyles();
     const { width } = useViewportSize();
-    const { userMe } = useAuthContext();
+    const { auth, userMe } = useAuthContext();
     const [ loading, setLoading ] = useState(false);
     const [response, setResponse] = useState('');
     const [enrolled, setEnrolled] = useState(false);
@@ -89,10 +89,11 @@ const Intermediate: NextPage = () => {
     }
 
     const onClick = async() => {
+        if(!auth) router.push('/auth/login').then(() => router.reload());
         //Check if role is admin or tutor or course pricing is free
         setLoading(true);
         if (userMe.role === "admin" || userMe.role === "tutor"){
-            const enrolment = await enroll(userMe.id, '1');
+            const enrolment = await enroll(userMe.id, '2');
             if (enrolment?.message === "success"){
                 router.push("/students/courses");
             }

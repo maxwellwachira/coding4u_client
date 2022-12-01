@@ -3,7 +3,6 @@ import { useForm } from "@mantine/form";
 import axios from "axios";
 
 import { urls } from "../../../constants/urls";
-import { useRouter } from "next/router";
 
 export const useForgetPassword = () => {
     const [response, setResponse] = useState('');

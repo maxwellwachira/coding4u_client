@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
-import {  Box, Button, Card, Center, Container, createStyles, Grid, Stack, Text, TextInput, } from '@mantine/core';
+import { Box, Button, Card, Center, Container, createStyles, Grid, Stack, Text, TextInput, } from '@mantine/core';
 import { useViewportSize } from '@mantine/hooks';
 
 import MainLayout from '../layouts/mainLayout/mainLayout';
@@ -18,7 +18,7 @@ import { footerData } from '../constants/footer';
 const useStyles = createStyles((theme) => ({
   cardWidth: {
     width: 230,
-    minHeight: 350, 
+    minHeight: 350,
     boxShadow: 'rgba(100, 100, 111, 0.2) 0px 7px 29px 0px'
   },
 
@@ -29,15 +29,15 @@ const useStyles = createStyles((theme) => ({
     display: "inline-block",
     padding: "5px 12px",
     textAlign: "center",
-    color:  theme.colors.gray[0],
+    color: theme.colors.gray[0],
     fontWeight: 'bold',
     margin: '30px 0',
     boxShadow: '0 6px 10px 0 rgba(0,0,0,0.2)',
     '&:hover': {
-       opacity: 0.7,
-       backgroundColor: `${colors.primaryColor}`,
-       textDecoration: 'none'
-        
+      opacity: 0.7,
+      backgroundColor: `${colors.primaryColor}`,
+      textDecoration: 'none'
+
     }
   },
 
@@ -52,7 +52,7 @@ const useStyles = createStyles((theme) => ({
   },
 
   heroGradient: {
-    maxWidth:1080,
+    maxWidth: 1080,
     background: 'linear-gradient(135deg, #FEB692 0%, #E43B3C 100%)',
     borderRadius: '40px 40px 240px 40px',
     marginBottom: 90,
@@ -64,17 +64,17 @@ const useStyles = createStyles((theme) => ({
     background: `${colors.primaryLight}`,
   },
 
-  primaryText : {
-    color : `${colors.primaryColor}`
+  primaryText: {
+    color: `${colors.primaryColor}`
   },
- 
+
 
   secondaryText: {
     color: `${colors.secondaryColor}`
   },
 
   subscribeGradient: {
-    maxWidth:1080,
+    maxWidth: 1080,
     background: 'linear-gradient(135deg, #FEB692 0%, #E43B3C 100%)',
     borderRadius: 40,
     marginLeft: 'auto',
@@ -89,7 +89,7 @@ const useStyles = createStyles((theme) => ({
   whiteText: {
     color: theme.colors.gray[0]
   }
- 
+
 }));
 
 const Home: NextPage = () => {
@@ -109,8 +109,9 @@ const Home: NextPage = () => {
             <Grid gutter={70}>
               <Grid.Col md={6}>
                 <Stack>
-                  <Text className={`${classes.heading}`} color="white">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Text>
-                  <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed bibendum efficitur arcu, eget gravida dui lobortis non. Integer hendrerit enim vitae metus consectetur egestas. Donec sit amet aliquam sem, et volutpat nisi. Maecenas augue elit, fringilla vel risus at, egestas pharetra erat. Nam in dolor ante. Aenean tincidunt iaculis felis. Nam dignissim dignissim sem vitae sagittis.</Text>
+                  <Text className={`${classes.heading}`} color="white" mt={width > 768 ? 30 : 5}>Training the future workforce in emerging technologies by nurturing Africa's Tech Talent
+                  </Text>
+                  <Text size={18} weight={550}>Coding4U Academy - Learn . Explore . Innovate.</Text>
                 </Stack>
                 <Button
                   component='a'
@@ -122,7 +123,7 @@ const Home: NextPage = () => {
               </Grid.Col>
               <Grid.Col md={6}>
                 <Center>
-                  <Image 
+                  <Image
                     src={hero}
                     height={width >= 768 ? 500 : 350}
                     width={width >= 768 ? 500 : 310}
@@ -138,7 +139,8 @@ const Home: NextPage = () => {
           <Grid gutter="xl">
             <Grid.Col md={3}>
               <Text size={35} weight={600} color={`${colors.primaryColor}`}>Why should you Join Us</Text>
-              <Text> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed bibendum efficitur arcu, eget gravida dui lobortis non. Integer hendrerit enim vitae metus consectetur egestas. Donec sit amet</Text>
+              <Text>We are a team of experts committed to skill building and workforce development in technologies that are going to change the world over the next decade </Text>
+              <Text weight={600} mt={10}>Don't be left out!!</Text>
             </Grid.Col>
             <Grid.Col md={3}>
               <Stack align="center">
@@ -173,7 +175,7 @@ const Home: NextPage = () => {
                     </Center>
                   </Card.Section>
                   <Text ml={20} size={23} weight={500} mt={10}>
-                  Well<br />Developed<br />Curriculum
+                    Well<br />Developed<br />Curriculum
                   </Text>
                 </Card>
               </Stack>
@@ -205,22 +207,24 @@ const Home: NextPage = () => {
             <Grid gutter={60}>
               <Grid.Col md={6}>
                 <Text size={32} weight={550}>
-                  Our Curriculum has been<br/>
+                  Our Curriculum has been<br />
                   <span className={classes.primaryText}>Developed by Industry Experts</span>
                 </Text>
-                <Text my="xl">
-                  In hac habitasse platea dictumst. Nunc quis elit in velit viverra vestibulum. Sed id urna et erat venenatis aliquam. Ut aliquet risus in nisi elementum, ac vulputate neque maximus. Ut nisi 
+                <Text mt="xl">
+                  Who is better to develop a curriculum than industry experts?
                 </Text>
+                <Text mb="xl">Our curriculum has been developed having our learners in mind making it easy to understand and apply</Text>
+                
                 <Text size={25} weight={550}>
-                  Our tutors are also<br/>
+                  Our tutors are also<br />
                   <span className={classes.primaryText}>Industry Experts</span>
                 </Text>
                 <Text my="xl">
-                  In hac habitasse platea dictumst. Nunc quis elit in velit viverra vestibulum. Sed id urna et erat venenatis aliquam. Ut aliquet risus in nisi elementum, ac vulputate neque maximus. Ut nisi 
+                  We don't stop at having experts develop our curriculum, we also bring them on board to teach our students bringing with them industrial experience.
                 </Text>
                 <Button
                   component='a'
-                  href='#'
+                  href='/courses'
                   className={classes.exploreButton}
                 >
                   Get Started
@@ -244,14 +248,15 @@ const Home: NextPage = () => {
           <Center mt={40}>
             <Text className={`${classes.primaryText}`} mt="xl" size={32} weight={550}>What We offer</Text>
           </Center>
-          <Text my="xl">
-             In hac habitasse platea dictumst. Nunc quis elit in velit viverra vestibulum. Sed id urna et erat venenatis aliquam. Ut aliquet risus in nisi elementum, ac vulputate neque maximus. Ut nisi lorem, scelerisque rhoncus mattis eu, vehicula a mi. Interdum et malesuada fames ac ante ipsum primis in faucibus. In finibus, leo at consequat consectetur, mauris odio malesuada est, eget imperdiet nunc mi eu massa. Proin sit amet nulla leo. Donec vitae blandit odio. Curabitur justo eros, porttitor eu quam a, interdum scelerisque eros.
+          <Text mt="xl">
+            Our courses are categorized into three groups. From Beginner courses all the way to advanced courses. We train students from as young as 10 years old all the way up - we have no upper age limit.
           </Text>
+          <Text mb="xl">No prior programming experience is required to enrol in some of our programs. You will join as an amateur and leave as an expert </Text>
           <Text className={`${classes.primaryText}`} mt="xl" component='h1' size={27}>Beginner Package</Text>
           <Grid gutter={50}>
             <Grid.Col md={6}>
               <Center>
-                <Image 
+                <Image
                   src='/scratch.svg'
                   height={width >= 768 ? 350 : 300}
                   width={width >= 768 ? 400 : 300}
@@ -261,34 +266,45 @@ const Home: NextPage = () => {
             </Grid.Col>
             <Grid.Col md={6}>
               <Text mt="sm">
-                 In hac habitasse platea dictumst. Nunc quis elit in velit viverra vestibulum. Sed id urna et erat venenatis aliquam. Ut aliquet risus in nisi elementum, ac vulputate neque maximus. Ut nisi lorem, scelerisque rhoncus mattis eu, vehicula a mi. Interdum et malesuada fames ac ante ipsum primis in faucibus. In finibus, leo at consequat consectetur, mauris odio malesuada est, eget imperdiet nunc mi eu massa. Proin sit amet nulla leo. Donec vitae blandit odio. Curabitur justo eros, porttitor eu quam a, interdum scelerisque eros
-             </Text>
-             <Button
-              component='a'
-              href='/courses/beginner'
-              className={classes.exploreButton}
-             >
-              Explore Course
-             </Button>
+                Students in this course will learn <Text component='span' weight={600}>Scratch Programming</Text>
+              </Text>
+              <Text>Scratch is a visual, block-based programming language developed by MIT</Text>
+              <Text>Scratch is the best way to introduce children to programming. It encourages creative thinking, fosters problem solving, helps develop logical thinking skills and on top of it all, it is fun and interactive to learn</Text>
+              <Text>No prior programming knowledge is required to join this course</Text>
+
+              <Button
+                component='a'
+                href='/courses/beginner'
+                className={classes.exploreButton}
+              >
+                Explore Course
+              </Button>
             </Grid.Col>
           </Grid>
           <Text className={`${classes.primaryText}`} mt="xl" component='h1' size={27}>Intermediate Package</Text>
-          <Grid gutter={70}>
+          <Grid gutter={50}>
             <Grid.Col md={6}>
               <Text mt="sm">
-                 In hac habitasse platea dictumst. Nunc quis elit in velit viverra vestibulum. Sed id urna et erat venenatis aliquam. Ut aliquet risus in nisi elementum, ac vulputate neque maximus. Ut nisi lorem, scelerisque rhoncus mattis eu, vehicula a mi. Interdum et malesuada fames ac ante ipsum primis in faucibus. In finibus, leo at consequat consectetur, mauris odio malesuada est, eget imperdiet nunc mi eu massa. Proin sit amet nulla leo. Donec vitae blandit odio. Curabitur justo eros, porttitor eu quam a, interdum scelerisque eros
-             </Text>
-             <Button
-              component='a'
-              href='/courses/intermediate'
-              className={classes.exploreButton}
-             >
-              Explore Courses
-             </Button>
+                Students in this course will learn <Text component='span' weight={600}>Static Web Development with HTML and CSS</Text>
+              </Text>
+              <Text>
+                Web development is the process of designing, building and maintaining a website. At the end of this course, Students should be able to build static websites
+              </Text>
+              <Text>Web development is high on demand all over the world. Our curriculum follows international standards. The material you learn at Coding4U is the same abroad</Text>
+              <Text>
+                No prior programming knowledge is required to join this course
+              </Text>
+              <Button
+                component='a'
+                href='/courses/intermediate'
+                className={classes.exploreButton}
+              >
+                Explore Courses
+              </Button>
             </Grid.Col>
             <Grid.Col md={6}>
               <Center>
-                <Image 
+                <Image
                   src="/intermediate.svg"
                   height={width >= 768 ? 350 : 300}
                   width={width >= 768 ? 400 : 300}
@@ -301,7 +317,7 @@ const Home: NextPage = () => {
           <Grid gutter={70}>
             <Grid.Col md={6}>
               <Center>
-                <Image 
+                <Image
                   src={iot}
                   height={width >= 768 ? 350 : 300}
                   width={width >= 768 ? 400 : 300}
@@ -311,15 +327,18 @@ const Home: NextPage = () => {
             </Grid.Col>
             <Grid.Col md={6}>
               <Text mt="sm">
-                 In hac habitasse platea dictumst. Nunc quis elit in velit viverra vestibulum. Sed id urna et erat venenatis aliquam. Ut aliquet risus in nisi elementum, ac vulputate neque maximus. Ut nisi lorem, scelerisque rhoncus mattis eu, vehicula a mi. Interdum et malesuada fames ac ante ipsum primis in faucibus. In finibus, leo at consequat consectetur, mauris odio malesuada est, eget imperdiet nunc mi eu massa. Proin sit amet nulla leo. Donec vitae blandit odio. Curabitur justo eros, porttitor eu quam a, interdum scelerisque eros
-             </Text>
-             <Button
-              component='a'
-              href='/courses/advanced'
-              className={classes.exploreButton}
-             >
-              Explore Courses
-             </Button>
+                Students in this course will learn <Text component='span' weight={600}>Dynamic Web Development with Pure JavaScript</Text>
+              </Text>
+              <Text>Unlike in the previous courses, students in this course should have a solid understanding of HTML and CSS. Don't worry, you can enrol in our intermediate course to learn HTML and CSS.</Text>
+              <Text>JavaScript(JS) is the widely used Programming Language in Web development. There are tones of JS libraries that are very popular for instance ReactJS, VueJS, Angular. JavaScript can also be used for server side development and Web3/smart contracts development</Text>
+              <Text>Learning JavaScript will open doors to many opportunities</Text>
+              <Button
+                component='a'
+                href='/courses/advanced'
+                className={classes.exploreButton}
+              >
+                Explore Courses
+              </Button>
             </Grid.Col>
           </Grid>
         </Container>
@@ -330,18 +349,18 @@ const Home: NextPage = () => {
               <Grid.Col md={7} mt={30}>
                 <Text size={32} weight={550} color="white">Don't be left out, <br />Subscribe to our News Letter</Text>
                 <form className={classes.subscribeWidth}>
-                    <TextInput 
-                        mt="xl"
-                        placeholder={`     Enter Your Email`}
-                        rightSection={<Button radius={"lg"} size="md" style={{background: `${colors.primaryColor}`}}>Subscribe</Button>}
-                        radius="lg"
-                        size="md"
-                    />
+                  <TextInput
+                    mt="xl"
+                    placeholder={`     Enter Your Email`}
+                    rightSection={<Button radius={"lg"} size="md" style={{ background: `${colors.primaryColor}` }}>Subscribe</Button>}
+                    radius="lg"
+                    size="md"
+                  />
                 </form>
               </Grid.Col>
               <Grid.Col md={5}>
                 <Center>
-                  <Image 
+                  <Image
                     src='/subscribe.svg'
                     height={300}
                     width={300}
@@ -352,7 +371,7 @@ const Home: NextPage = () => {
             </Grid>
           </Container>
         </Box>
-        <FooterLinks data={footerData}/>
+        <FooterLinks data={footerData} />
       </MainLayout>
     </>
   )

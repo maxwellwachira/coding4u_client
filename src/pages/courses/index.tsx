@@ -79,7 +79,11 @@ const Courses: NextPage = () => {
                                 </Card.Section>
                                 <Text align="center" size={24} weight={600} color={`${colors.primaryColor}`}>Beginner Package</Text>
                                 <Text mt={20}>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras facilisis eros nisl, in pellentesque dolor facilisis vel. Etiam euismod, ligula eget sollicitudin elementum, sapien ipsum sodales urna, at imperdiet nunc neque et quam. Duis blandit dolor et rutrum congue. </Text>
+                                    Students in this course will learn <Text component='span' weight={600}>Scratch Programming</Text>
+                                </Text>
+                                <Text my="sm">Scratch is a visual, block-based programming language developed by MIT. Scratch encourages creative thinking, fosters problem solving, helps develop logical thinking skills and on top of it all, it is fun and interactive to learn</Text>
+                                <Text>No prior programming knowledge is required to join this course</Text>
+
                                 <Center>
                                     <Button 
                                         className={classes.moreButton} 
@@ -108,7 +112,14 @@ const Courses: NextPage = () => {
                                 </Card.Section>
                                 <Text align="center" size={24} weight={600} color={`${colors.primaryColor}`}>Intermediate Package</Text>
                                 <Text mt={20}>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras facilisis eros nisl, in pellentesque dolor facilisis vel. Etiam euismod, ligula eget sollicitudin elementum, sapien ipsum sodales urna, at imperdiet nunc neque et quam. Duis blandit dolor et rutrum congue. </Text>
+                                    Students in this course will learn <Text component='span' weight={600}>Static Web Development with HTML and CSS</Text> 
+                                </Text>
+                                <Text my="sm">
+                                    Web development is the process of designing, building and maintaining a website. At the end of this course, Students should be able to build static websites. Our curriculum follows international standards.
+                                </Text>
+                                <Text>
+                                    No prior programming knowledge is required to join this course
+                                </Text>
                                 <Center>
                                     <Button 
                                         className={classes.moreButton} 
@@ -137,7 +148,11 @@ const Courses: NextPage = () => {
                                 </Card.Section>
                                 <Text align="center" size={24} weight={600} color={`${colors.primaryColor}`}>Advanced Package</Text>
                                 <Text mt={20}>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras facilisis eros nisl, in pellentesque dolor facilisis vel. Etiam euismod, ligula eget sollicitudin elementum, sapien ipsum sodales urna, at imperdiet nunc neque et quam. Duis blandit dolor et rutrum congue. </Text>
+                                    Students in this course will learn <Text component='span' weight={600}>Dynamic Web Development with Pure JavaScript</Text>
+                                    <Text my="sm">JavaScript(JS) is the widely used Programming Language in Web development. Learning JavaScript will open doors to many opportunities</Text>
+                                    <Text>Unlike in the previous courses, students in this course should have a solid understanding of HTML and CSS.</Text>
+                                </Text>
+
                                 <Center>
                                     <Button 
                                         className={classes.moreButton} 

@@ -302,8 +302,8 @@ const Intermediate: NextPage = () => {
                                     <Text size={24} weight={600} color={`${colors.primaryColor}`}>Price: </Text>
                                     <Badge color="dark" size="lg">15,000 KES</Badge>
                                 </Group>
-                                <Text mt={20}>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras facilisis eros nisl, Explore Learn Innovate</Text>
+                                <Text mt={20}>Explore Learn Innovate</Text>
+                                <Text mt={20}>Don't be left out, Enrol today</Text>
                                 <Center>
                                     {
                                         enrolled ?

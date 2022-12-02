@@ -1,5 +1,5 @@
 import { Text, Container, ActionIcon, Group } from '@mantine/core';
-import { IconBrandTwitter, IconBrandYoutube, IconBrandInstagram } from '@tabler/icons';
+import { IconBrandTwitter, IconBrandInstagram, IconBrandFacebook } from '@tabler/icons';
 import Image from 'next/image';
 
 import { useStyles } from './footer.styles';
@@ -60,13 +60,13 @@ interface FooterLinksProps {
         </Text>
 
         <Group spacing={0} className={classes.social} position="right" noWrap>
-          <ActionIcon size="lg">
+          <ActionIcon size="lg" component='a' href='https://twitter.com/coding_4u'>
             <IconBrandTwitter size={18} stroke={1.5} color={`${colors.primaryColor}`}/>
           </ActionIcon>
-          <ActionIcon size="lg">
-            <IconBrandYoutube size={18} stroke={1.5} color={`${colors.primaryColor}`}/>
+          <ActionIcon size="lg" component='a' href='https://www.facebook.com/profile.php?id=100087907676581&mibextid=ZbWKwL'>
+            <IconBrandFacebook size={18} stroke={1.5} color={`${colors.primaryColor}`}/>
           </ActionIcon>
-          <ActionIcon size="lg">
+          <ActionIcon size="lg" component='a' href='https://www.instagram.com/p/ClgyESTMCzU/?igshid=YmMyMTA2M2Y='>
             <IconBrandInstagram size={18} stroke={1.5} color={`${colors.primaryColor}`}/>
           </ActionIcon>
         </Group>

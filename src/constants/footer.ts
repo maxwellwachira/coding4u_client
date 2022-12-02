@@ -29,10 +29,10 @@ export const footerData = [
     {
         title: 'Social Links',
         links: [
-            { id: 0, link: '', label: 'Twitter' },
-            { id: 1, link: '', label: 'LinkedIn' },
-            { id: 2, link: '', label: 'Instagram' },
-            { id: 3, link: '', label: 'Facebook' }
+            { id: 0, link: 'https://twitter.com/coding_4u', label: 'Twitter' },
+            { id: 1, link: 'https://t.me/+KENMJxtgn39kZTVk', label: 'Telegram' },
+            { id: 2, link: 'https://www.instagram.com/p/ClgyESTMCzU/?igshid=YmMyMTA2M2Y=', label: 'Instagram' },
+            { id: 3, link: 'https://www.facebook.com/profile.php?id=100087907676581&mibextid=ZbWKwL', label: 'Facebook' }
         ]
     },
 ];

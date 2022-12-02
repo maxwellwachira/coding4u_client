@@ -113,9 +113,9 @@ const About: NextPage = () => {
                                     >
                                         <List.Item>Sales & Marketing Professional</List.Item>
                                         <List.Item>Enterprise Sales Manager - Airtel Kenya for 7 years</List.Item>
-                                        <List.Item>Entreprenuer - Real Estate, Crypto & Forex</List.Item>
+                                        <List.Item>Entreprenuer - Real Estate, Blockchain & Forex</List.Item>
                                         <List.Item>Founder, Beyondfiat Crypto Academy</List.Item>
-                                        <List.Item>Cryptocurrency Investor, Educator & Trainer</List.Item>
+                                        <List.Item>Blockchain & Crypto Investor, Educator & Trainer</List.Item>
                                     </List>
                                 </Card>
                             </Stack>

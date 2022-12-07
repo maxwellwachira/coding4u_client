@@ -45,6 +45,12 @@ export function StudentLayout({children}: Props ) {
       link: '/students/live-session',
       active: router.pathname === '/students/live-session' ? true : false,
     },
+    {
+      label: 'Uploads',
+      icon: IconUsers,
+      link: '/students/uploads',
+      active: router.pathname === '/students/uploads' ? true : false,
+    },
     { 
       label: 'Certificates', 
       icon: IconCertificate, 

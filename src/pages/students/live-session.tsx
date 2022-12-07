@@ -73,9 +73,9 @@ const LiveSession: NextPage = () => {
                         <Text mt="xl" weight={600} size={28} color={`${colors.primaryColor}`}>{`${getGreetings()} ${userMe.firstName} ${userMe.lastName}`}</Text>
                     </Center>
                     <Paper radius={40} withBorder p="xl" my={50}>
-                        {enrolmentData?.totalEnrolments === 0 ?
+                        {/* {enrolmentData?.totalEnrolments !== 0 ?
                             <Text weight={600} size={28} color="red">Not Authorized, Enrol to a course first</Text>
-                            :
+                            : */}
 
                             <Grid gutter={40}>
                                 <Grid.Col md={7}>
@@ -105,7 +105,7 @@ const LiveSession: NextPage = () => {
                                     </Stack>
                                 </Grid.Col>
                             </Grid>
-                        }
+                        {/* } */}
                     </Paper>
                 </Container>
             </StudentLayout>

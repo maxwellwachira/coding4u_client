@@ -122,4 +122,15 @@ export const useStyles = createStyles((theme) => ({
     
     },
 
+    whatsapp : {
+        position: 'fixed',
+        top: 'calc(100vh - 105px)',
+        right: 0,
+        marginRight: 30,
+        zIndex: 10,
+        [theme.fn.smallerThan("md")]: {
+            marginRight: 10,
+        }
+    }
+
 }))

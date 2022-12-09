@@ -2,6 +2,7 @@ import React, { ReactNode, useState } from 'react';
 import {
   Anchor,
   AppShell,
+  Box,
   Burger,
   Divider,
   Drawer,
@@ -18,6 +19,7 @@ import { useStyles } from './mainLayout.styles';
 import logo from '../../assets/logo.jpeg';
 import { colors } from '../../constants/colors';
 import { useAuthContext } from '../../features/authentication';
+import whatsapp from '../../assets/whatsapp.png';
 
 type Props = {
   children: ReactNode;
@@ -116,7 +118,15 @@ const MainLayout = ({ children }: Props) => {
             </Drawer>
         </Navbar>}
     >
-        {children}
+      <Anchor className={classes.whatsapp} href='https://wa.me/254703519593?text=Hello%2C%20I%20am%20interested%20in%20Coding4U' target='_blank'>
+        <Image 
+          src={whatsapp}
+          height={60}
+          width={60}
+          alt="whatsapp icon"
+        />
+      </Anchor>
+          {children}
     </AppShell>
   );
 }

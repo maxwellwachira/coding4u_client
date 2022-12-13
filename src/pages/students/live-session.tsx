@@ -93,11 +93,12 @@ const LiveSession: NextPage = () => {
                                         <Text>Click the button to join a live session</Text>
                                         <Button
                                             component='a'
-                                            href='/meeting/live-session'
+                                            href='https://meet.google.com/cqb-myyf-ebm'
                                             variant='outline'
                                             color='dark'
                                             mt="xl"
                                             radius="xl"
+                                            target='_blank'
                                             fullWidth
                                         >
                                             Join Now

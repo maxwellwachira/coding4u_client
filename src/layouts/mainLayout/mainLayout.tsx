@@ -76,8 +76,8 @@ const MainLayout = ({ children }: Props) => {
               <Anchor className={`${classes.navitem} ${router.pathname === "/contact" ? classes.active : "" }`} href="/contact">Contact</Anchor>
               {auth ? <Anchor  className={classes.navitem} href={userMe.role === "student" ? "/students" : "/admin"}>Dashboard</Anchor> :
               <div>
-                <Anchor className={`${classes.navitem} ${classes.signin} ${router.pathname === "/auth/login" ? classes.activeSignIn : "" }`} href="/auth/login" >Sign In</Anchor>
-                <Anchor className={`${classes.navitem} ${classes.signup} ${router.pathname === "/auth/register" ? classes.activeSignUp : "" }`} href="/auth/register">Sign Up</Anchor>
+                <Anchor className={`${classes.navitem} ${classes.signin} ${router.pathname === "/auth/login" ? classes.activeSignIn : "" }`} href="/auth/login" >Login</Anchor>
+                <Anchor className={`${classes.navitem} ${classes.signup} ${router.pathname === "/auth/register" ? classes.activeSignUp : "" }`} href="/auth/register">Register</Anchor>
               </div>
               }
             </div>
@@ -110,8 +110,8 @@ const MainLayout = ({ children }: Props) => {
                 <Anchor className={`${classes.navitem} ${router.pathname === "/contact" ? classes.active : "" }`} href="/contact">Contact</Anchor>
                 {auth ? <Anchor  className={classes.navitem} href={userMe.role === "student" ? "/students" : "/admin"} mt="sm">Dashboard</Anchor> :
                 <Group mt="lg">
-                  <Anchor className={`${classes.navitem} ${classes.signin} ${router.pathname === "/auth/login" ? classes.activeSignIn : "" }`} href="/auth/login" >Sign In</Anchor>
-                  <Anchor className={`${classes.navitem} ${classes.signup} ${router.pathname === "/auth/register" ? classes.activeSignUp : "" }`} href="/auth/register">Sign Up</Anchor>
+                  <Anchor className={`${classes.navitem} ${classes.signin} ${router.pathname === "/auth/login" ? classes.activeSignIn : "" }`} href="/auth/login" >Login</Anchor>
+                  <Anchor className={`${classes.navitem} ${classes.signup} ${router.pathname === "/auth/register" ? classes.activeSignUp : "" }`} href="/auth/register">Register</Anchor>
                 </Group>
                 }
               </div>

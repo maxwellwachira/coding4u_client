@@ -1,8 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
-import { Box, Button, Card, Center, Container, createStyles, Grid, List, Stack, Text, TextInput, ThemeIcon, } from '@mantine/core';
-import { useViewportSize } from '@mantine/hooks';
+import { Card, Center, Container, createStyles, Grid, List, Stack, Text, ThemeIcon, } from '@mantine/core';
 import { IconCircleCheck } from '@tabler/icons';
 
 import MainLayout from '../layouts/mainLayout/mainLayout';
@@ -12,30 +11,18 @@ import { footerData } from '../constants/footer';
 import mission from '../assets/mission.jpg';
 import maxwell from '../assets/profile.png';
 import aerlene from '../assets/aerlene.png';
+import Subscribe from '../components/subscribe/subscribe';
 
 const useStyles = createStyles((theme) => ({
     cardShadow: {
         boxShadow: 'rgba(100, 100, 111, 0.2) 0px 7px 29px 0px',
         maxWidth: 350
     },
-
-    subscribeGradient: {
-        maxWidth: 1080,
-        background: 'linear-gradient(135deg, #FEB692 0%, #E43B3C 100%)',
-        borderRadius: 40,
-        marginLeft: 'auto',
-        marginRight: 'auto'
-    },
-    subscribeWidth: {
-        maxWidth: 400,
-        width: "85%"
-    },
 }));
 
 const About: NextPage = () => {
     const { classes } = useStyles();
-    const { width } = useViewportSize();
-
+  
     return (
         <>
             <Head>
@@ -157,34 +144,7 @@ const About: NextPage = () => {
 
                     </Grid>
                 </Container>
-                <Box className={classes.subscribeGradient} my={70}>
-                    <Container>
-                        <Grid>
-                            <Grid.Col md={7} mt={30}>
-                                <Text size={32} weight={550} color="white">Don't be left out, <br />Subscribe to our News Letter</Text>
-                                <form className={classes.subscribeWidth}>
-                                    <TextInput
-                                        mt="xl"
-                                        placeholder={`     Enter Your Email`}
-                                        rightSection={<Button radius={"lg"} size="md" style={{ background: `${colors.primaryColor}` }}>Subscribe</Button>}
-                                        radius="lg"
-                                        size="md"
-                                    />
-                                </form>
-                            </Grid.Col>
-                            <Grid.Col md={5}>
-                                <Center>
-                                    <Image
-                                        src='/subscribe.svg'
-                                        height={300}
-                                        width={300}
-                                        alt="subscibe"
-                                    />
-                                </Center>
-                            </Grid.Col>
-                        </Grid>
-                    </Container>
-                </Box>
+                <Subscribe />
                 <FooterLinks data={footerData} />
             </MainLayout>
         </>

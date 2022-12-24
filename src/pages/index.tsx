@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
-import { Box, Button, Card, Center, Container, createStyles, Grid, Stack, Text, TextInput, } from '@mantine/core';
+import { Box, Button, Card, Center, Container, createStyles, Grid, MediaQuery, Stack, Text, TextInput, } from '@mantine/core';
 import { useViewportSize } from '@mantine/hooks';
 
 import MainLayout from '../layouts/mainLayout/mainLayout';
@@ -14,6 +14,7 @@ import expert from '../assets/expert.png';
 import iot from '../assets/js.png';
 import FooterLinks from '../components/footer/footer';
 import { footerData } from '../constants/footer';
+import Subscribe from '../components/subscribe/subscribe';
 
 const useStyles = createStyles((theme) => ({
   cardWidth: {
@@ -73,19 +74,6 @@ const useStyles = createStyles((theme) => ({
     color: `${colors.secondaryColor}`
   },
 
-  subscribeGradient: {
-    maxWidth: 1080,
-    background: 'linear-gradient(135deg, #FEB692 0%, #E43B3C 100%)',
-    borderRadius: 40,
-    marginLeft: 'auto',
-    marginRight: 'auto'
-  },
-
-  subscribeWidth: {
-    maxWidth: 400,
-    width: "85%"
-  },
-
   whiteText: {
     color: theme.colors.gray[0]
   }
@@ -106,32 +94,61 @@ const Home: NextPage = () => {
       <MainLayout>
         <Box className={classes.heroGradient}>
           <Container mt="xl">
-            <Grid gutter={70}>
+          <MediaQuery largerThan="md" styles={{ display: "none" }}>
+            <Grid gutter={30}>
               <Grid.Col md={6}>
-                <Stack>
-                  <Text className={`${classes.heading}`} color="white" mt={width > 768 ? 30 : 5}>Training the future workforce in emerging technologies by nurturing Africa's Tech Talent
-                  </Text>
-                  <Text size={18} weight={550}>Coding4U Academy - Learn . Explore . Innovate.</Text>
-                </Stack>
-                <Button
-                  component='a'
-                  href='/courses'
-                  className={classes.exploreButton}
-                >
-                  Get started
-                </Button>
+                <Text className={`${classes.heading}`} color="white" mt={5} fz={28} fw={600}>Training the future workforce in emerging technologies by nurturing Africa's Tech Talent</Text>
+                <Center>
+                    <Image
+                      src={hero}
+                      height={width >= 768 ? 500 : 350}
+                      width={width >= 768 ? 500 : 310}
+                      alt="Hero image"
+                    />
+                  </Center>
               </Grid.Col>
               <Grid.Col md={6}>
-                <Center>
-                  <Image
-                    src={hero}
-                    height={width >= 768 ? 500 : 350}
-                    width={width >= 768 ? 500 : 310}
-                    alt="Hero image"
-                  />
-                </Center>
+                <Stack justify="center" align={width >= 768 ? "center" : "flex-start"}>
+                <Text size={20} weight={550} >Coding4U Academy <br />Learn . Explore . Innovate.</Text>
+                  <Button
+                      component='a'
+                      href='/courses'
+                      className={classes.exploreButton}
+                    >
+                      Get started
+                  </Button>
+                </Stack>
               </Grid.Col>
             </Grid>
+          </MediaQuery>
+            <MediaQuery smallerThan="md" styles={{ display: "none" }}>
+              <Grid gutter={70}>
+                <Grid.Col md={6}>
+                  <Stack>
+                    <Text className={`${classes.heading}`} color="white" mt={width > 768 ? 30 : 5}>Training the future workforce in emerging technologies by nurturing Africa's Tech Talent
+                    </Text>
+                    <Text size={18} weight={550}>Coding4U Academy - Learn . Explore . Innovate.</Text>
+                  </Stack>
+                  <Button
+                    component='a'
+                    href='/courses'
+                    className={classes.exploreButton}
+                  >
+                    Get started
+                  </Button>
+                </Grid.Col>
+                <Grid.Col md={6}>
+                  <Center>
+                    <Image
+                      src={hero}
+                      height={width >= 768 ? 500 : 350}
+                      width={width >= 768 ? 500 : 310}
+                      alt="Hero image"
+                    />
+                  </Center>
+                </Grid.Col>
+              </Grid>
+            </MediaQuery>
           </Container>
         </Box>
 
@@ -214,7 +231,7 @@ const Home: NextPage = () => {
                   Who is better to develop a curriculum than industry experts?
                 </Text>
                 <Text mb="xl">Our curriculum has been developed having our learners in mind making it easy to understand and apply</Text>
-                
+
                 <Text size={25} weight={550}>
                   Our tutors are also<br />
                   <span className={classes.primaryText}>Industry Experts</span>
@@ -342,35 +359,7 @@ const Home: NextPage = () => {
             </Grid.Col>
           </Grid>
         </Container>
-
-        <Box className={classes.subscribeGradient} my={70}>
-          <Container>
-            <Grid>
-              <Grid.Col md={7} mt={30}>
-                <Text size={32} weight={550} color="white">Don't be left out, <br />Subscribe to our News Letter</Text>
-                <form className={classes.subscribeWidth}>
-                  <TextInput
-                    mt="xl"
-                    placeholder={`     Enter Your Email`}
-                    rightSection={<Button radius={"lg"} size="md" style={{ background: `${colors.primaryColor}` }}>Subscribe</Button>}
-                    radius="lg"
-                    size="md"
-                  />
-                </form>
-              </Grid.Col>
-              <Grid.Col md={5}>
-                <Center>
-                  <Image
-                    src='/subscribe.svg'
-                    height={300}
-                    width={300}
-                    alt="subscibe"
-                  />
-                </Center>
-              </Grid.Col>
-            </Grid>
-          </Container>
-        </Box>
+        <Subscribe />
         <FooterLinks data={footerData} />
       </MainLayout>
     </>

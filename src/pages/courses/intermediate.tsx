@@ -134,7 +134,7 @@ const Intermediate: NextPage = () => {
                 <Button
                     component='a'
                     href='/courses'
-                    size='md'
+                    size='xs'
                     mb="lg"
                     color="dark"
                     variant='outline'

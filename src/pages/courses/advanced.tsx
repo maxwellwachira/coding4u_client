@@ -145,7 +145,7 @@ const Advanced: NextPage = () => {
                     >
                         Go Back
                     </Button>
-                    <Text align="center" size={32} weight={600} color={`${colors.primaryColor}`}>Advanced course</Text>
+                    <Text align="center" size={32} weight={600} color={`${colors.primaryColor}`}>Advanced 1 - JavaScript</Text>
                     <Grid mb="xl">
                         <Grid.Col md={8}>
                             <Center>

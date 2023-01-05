@@ -132,11 +132,11 @@ const Courses: NextPage = () => {
                                         />
                                     </Center>
                                 </Card.Section>
-                                <Text align="center" size={24} weight={600} color={`${colors.primaryColor}`}>Advanced Package</Text>
+                                <Text align="center" size={24} weight={600} color={`${colors.primaryColor}`}>Advanced Package 1 - JavaScript</Text>
                                 <Text mt={20}>
                                     Students in this course will learn <Text component='span' weight={600}>Dynamic Web Development with Pure JavaScript</Text>
                                     <Text my="sm">JavaScript(JS) is the widely used Programming Language in Web development. Learning JavaScript will open doors to many opportunities</Text>
-                                    <Text>Unlike in the previous courses, students in this course should have a solid understanding of HTML and CSS.</Text>
+                                    <Text mb="sm">Prior knowledge in HTML and CSS is required.</Text>
                                 </Text>
 
                                 <Center>
@@ -152,7 +152,43 @@ const Courses: NextPage = () => {
                             </Card>
                         </Stack>
                     </Grid.Col>
-                    
+                    <Grid.Col md={4}>
+                        <Stack align="center">
+                            <Card className={classes.cardShadow} radius={40}>
+                                <Card.Section>
+                                    <Center>
+                                        <Image 
+                                            src="/advanced2.svg"
+                                            height={300}
+                                            width={300}
+                                            alt="Node JS"
+                                        />
+                                    </Center>
+                                </Card.Section>
+                                <Text align="center" size={24} weight={600} color={`${colors.primaryColor}`}>Advanced Package 2 - Node.js</Text>
+                                <Text mt={20}>
+                                    Students in this course will learn <Text component='span' weight={600}>Backend Development using Node.js</Text> 
+                                </Text>
+                                <Text my="sm">
+                                     Back-end development refers to the development of server-side logic that powers websites and apps from behind the scenes.
+                                    In this course we will be using Node.js which is server-side JavaScript for backend development
+                                </Text>
+                                <Text>
+                                    Prior knowledge in JavaScript is required
+                                </Text>
+                                <Center>
+                                    <Button 
+                                        className={classes.moreButton} 
+                                        size="md" 
+                                        component='a'
+                                        href='/courses/advanced2'
+                                    >
+                                        See More
+                                    </Button>
+                                </Center>
+                            </Card>
+                        </Stack>
+                    </Grid.Col>
                 </Grid>
             </Container>
             <Subscribe />

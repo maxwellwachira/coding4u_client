@@ -94,11 +94,11 @@ const Home: NextPage = () => {
       <MainLayout>
         <Box className={classes.heroGradient}>
           <Container mt="xl">
-          <MediaQuery largerThan="md" styles={{ display: "none" }}>
-            <Grid gutter={30}>
-              <Grid.Col md={6}>
-                <Text className={`${classes.heading}`} color="white" mt={5} fz={28} fw={600}>Training the future workforce in emerging technologies by nurturing Africa's Tech Talent</Text>
-                <Center>
+            <MediaQuery largerThan="md" styles={{ display: "none" }}>
+              <Grid gutter={30}>
+                <Grid.Col md={6}>
+                  <Text className={`${classes.heading}`} color="white" mt={5} fz={28} fw={600}>Training the future workforce in emerging technologies by nurturing Africa's Tech Talent</Text>
+                  <Center>
                     <Image
                       src={hero}
                       height={width >= 768 ? 500 : 350}
@@ -106,21 +106,21 @@ const Home: NextPage = () => {
                       alt="Hero image"
                     />
                   </Center>
-              </Grid.Col>
-              <Grid.Col md={6}>
-                <Stack justify="center" align={width >= 768 ? "center" : "flex-start"}>
-                <Text size={20} weight={550} >Coding4U Academy <br />Learn . Explore . Innovate.</Text>
-                  <Button
+                </Grid.Col>
+                <Grid.Col md={6}>
+                  <Stack justify="center" align={width >= 768 ? "center" : "flex-start"}>
+                    <Text size={20} weight={550} >Coding4U Academy <br />Learn . Explore . Innovate.</Text>
+                    <Button
                       component='a'
                       href='/courses'
                       className={classes.exploreButton}
                     >
                       Get started
-                  </Button>
-                </Stack>
-              </Grid.Col>
-            </Grid>
-          </MediaQuery>
+                    </Button>
+                  </Stack>
+                </Grid.Col>
+              </Grid>
+            </MediaQuery>
             <MediaQuery smallerThan="md" styles={{ display: "none" }}>
               <Grid gutter={70}>
                 <Grid.Col md={6}>
@@ -330,7 +330,7 @@ const Home: NextPage = () => {
               </Center>
             </Grid.Col>
           </Grid>
-          <Text className={`${classes.primaryText}`} mt="xl" component='h1' size={27}>Advanced Package</Text>
+          <Text className={`${classes.primaryText}`} mt="xl" component='h1' size={27}>Advanced 1 - JavaScript</Text>
           <Grid gutter={70}>
             <Grid.Col md={6}>
               <Center>
@@ -356,6 +356,38 @@ const Home: NextPage = () => {
               >
                 Explore Courses
               </Button>
+            </Grid.Col>
+          </Grid>
+          <Text className={`${classes.primaryText}`} mt="xl" component='h1' size={27}>Advanced 2 - Node.js</Text>
+          <Grid gutter={50}>
+            <Grid.Col md={6}>
+              <Text mt="sm">
+                Students in this course will learn <Text component='span' weight={600}>Backend Development using Node.js</Text>
+              </Text>
+              <Text>
+                Back-end development refers to the development of server-side logic that powers websites and apps from behind the scenes.
+              </Text>
+              <Text>In this course we will be using Node.js which is server-side JavaScript for backend development</Text>
+              <Text>
+                 Prior programming knowledge in JavaScript is required.  Don't worry, you can enrol in our JavaScript course 
+              </Text>
+              <Button
+                component='a'
+                href='/courses/advanced2'
+                className={classes.exploreButton}
+              >
+                Explore Courses
+              </Button>
+            </Grid.Col>
+            <Grid.Col md={6}>
+              <Center>
+                <Image
+                  src="/advanced2.svg"
+                  height={width >= 768 ? 350 : 300}
+                  width={width >= 768 ? 400 : 300}
+                  alt="Node JS"
+                />
+              </Center>
             </Grid.Col>
           </Grid>
         </Container>

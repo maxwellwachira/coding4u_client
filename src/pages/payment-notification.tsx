@@ -60,7 +60,7 @@ const PaymentNotification: NextPage = () => {
                             }, 6000);
                         }
                         break;
-                    case 7500:
+                    case 15000:
                         const intermediate = await enroll(userMe.id, '2');
                         if (intermediate?.message === "success"){
                             setResponse("Payment was successful");

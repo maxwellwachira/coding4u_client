@@ -7,7 +7,6 @@ import {
   IconLogout,
   IconDeviceComputerCamera,
   IconUpload,
-  IconWebhook,
   IconApps,
 } from '@tabler/icons';
 import { useRouter } from 'next/router';

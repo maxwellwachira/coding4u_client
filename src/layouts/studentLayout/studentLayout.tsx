@@ -2,10 +2,13 @@ import { useState, ReactNode } from 'react';
 import { Burger, Header, Navbar, MediaQuery, ScrollArea, Text, AppShell, Box } from '@mantine/core';
 import {
   IconGauge,
-  IconSchool,
   IconUsers,
   IconCertificate,
   IconLogout,
+  IconDeviceComputerCamera,
+  IconUpload,
+  IconWebhook,
+  IconApps,
 } from '@tabler/icons';
 import { useRouter } from 'next/router';
 
@@ -34,6 +37,12 @@ export function StudentLayout({children}: Props ) {
 
   const data = [
     { 
+      label: 'Main Page', 
+      icon: IconApps, 
+      link: '/', 
+      active: router.pathname === '/' ? true : false
+    },
+    { 
       label: 'Dashboard', 
       icon: IconGauge, 
       link: '/students', 
@@ -41,13 +50,19 @@ export function StudentLayout({children}: Props ) {
     },
     {
       label: 'Live Session',
-      icon: IconUsers,
+      icon: IconDeviceComputerCamera,
       link: '/students/live-session',
       active: router.pathname === '/students/live-session' ? true : false,
     },
     {
-      label: 'Uploads',
+      label: 'My referrals',
       icon: IconUsers,
+      link: '/students/referrals',
+      active: router.pathname === '/students/referrals' ? true : false,
+    },
+    {
+      label: 'Uploads',
+      icon: IconUpload,
       link: '/students/uploads',
       active: router.pathname === '/students/uploads' ? true : false,
     },

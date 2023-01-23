@@ -132,7 +132,7 @@ const Courses: NextPage = () => {
                                         />
                                     </Center>
                                 </Card.Section>
-                                <Text align="center" size={24} weight={600} color={`${colors.primaryColor}`}>Advanced Package 1 - JavaScript</Text>
+                                <Text align="center" size={24} weight={600} color={`${colors.primaryColor}`}>Advance Package 1 - JavaScript</Text>
                                 <Text mt={20}>
                                     Students in this course will learn <Text component='span' weight={600}>Dynamic Web Development with Pure JavaScript</Text>
                                     <Text my="sm">JavaScript(JS) is the widely used Programming Language in Web development. Learning JavaScript will open doors to many opportunities</Text>
@@ -165,7 +165,7 @@ const Courses: NextPage = () => {
                                         />
                                     </Center>
                                 </Card.Section>
-                                <Text align="center" size={24} weight={600} color={`${colors.primaryColor}`}>Advanced Package 2 - Node.js</Text>
+                                <Text align="center" size={24} weight={600} color={`${colors.primaryColor}`}>Advance Package 2 - Node.js</Text>
                                 <Text mt={20}>
                                     Students in this course will learn <Text component='span' weight={600}>Backend Development using Node.js</Text> 
                                 </Text>

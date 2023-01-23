@@ -126,8 +126,8 @@ const Advanced2: NextPage = () => {
     return (
         <>
             <Head>
-                <title>Coding4U | Advanced Course 2</title>
-                <meta name="description" content="Coding4U Advanced Course 2" />
+                <title>Coding4U | Advance Course 2</title>
+                <meta name="description" content="Coding4U Advance Course 2" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <MainLayout>

@@ -330,7 +330,7 @@ const Home: NextPage = () => {
               </Center>
             </Grid.Col>
           </Grid>
-          <Text className={`${classes.primaryText}`} mt="xl" component='h1' size={27}>Advanced 1 - JavaScript</Text>
+          <Text className={`${classes.primaryText}`} mt="xl" component='h1' size={27}>Advance 1 - JavaScript</Text>
           <Grid gutter={70}>
             <Grid.Col md={6}>
               <Center>
@@ -358,7 +358,7 @@ const Home: NextPage = () => {
               </Button>
             </Grid.Col>
           </Grid>
-          <Text className={`${classes.primaryText}`} mt="xl" component='h1' size={27}>Advanced 2 - Node.js</Text>
+          <Text className={`${classes.primaryText}`} mt="xl" component='h1' size={27}>Advance 2 - Node.js</Text>
           <Grid gutter={50}>
             <Grid.Col md={6}>
               <Text mt="sm">

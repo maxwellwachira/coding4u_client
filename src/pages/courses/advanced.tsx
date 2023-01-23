@@ -128,7 +128,7 @@ const Advanced: NextPage = () => {
         <>
             <Head>
                 <title>Coding4U | Advanced Course</title>
-                <meta name="description" content="Coding4U Advanced Course" />
+                <meta name="description" content="Coding4U Advance Course" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <MainLayout>
@@ -145,7 +145,7 @@ const Advanced: NextPage = () => {
                     >
                         Go Back
                     </Button>
-                    <Text align="center" size={32} weight={600} color={`${colors.primaryColor}`}>Advanced 1 - JavaScript</Text>
+                    <Text align="center" size={32} weight={600} color={`${colors.primaryColor}`}>Advance 1 - JavaScript</Text>
                     <Grid mb="xl">
                         <Grid.Col md={8}>
                             <Center>

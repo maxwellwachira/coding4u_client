@@ -3,6 +3,8 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { Box, Button, Card, Center, Container, createStyles, Grid, MediaQuery, Stack, Text, TextInput, } from '@mantine/core';
 import { useViewportSize } from '@mantine/hooks';
+import { setCookie } from "cookies-next";
+import { useRouter } from 'next/router';
 
 import MainLayout from '../layouts/mainLayout/mainLayout';
 import { colors } from '../constants/colors';
@@ -83,6 +85,13 @@ const useStyles = createStyles((theme) => ({
 const Home: NextPage = () => {
   const { classes } = useStyles();
   const { width } = useViewportSize();
+  const router = useRouter();
+  const { ref } = router.query;
+  
+  //store cookie with 60 days expiry if referral code is available
+  if(ref){
+    setCookie('ref', ref, {maxAge: 300});
+  }
 
   return (
     <>

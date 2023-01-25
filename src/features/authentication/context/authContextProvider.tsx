@@ -10,6 +10,7 @@ type AuthContextType = {
     userMe: {
         id: string;
         role: string;
+        referralCode?: string;
         firstName?: string;
         lastName?: string;
         password?: string;

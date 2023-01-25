@@ -1,12 +1,16 @@
 import { useState } from "react";
 import { useForm } from "@mantine/form";
 import axios from "axios";
+import { getCookie } from "cookies-next";
 
 import { urls } from "../../../constants/urls";
 
 export const useRegisterUser = () => {
     const [response, setResponse ] = useState('');
     const [loading, setLoading] = useState(false);
+
+    const ref = getCookie('ref');
+
     const initialValues = {
         email: '',
         firstName: '',
@@ -29,8 +33,10 @@ export const useRegisterUser = () => {
     const handleSubmit = async() => {
         if(JSON.stringify(form.errors) === "{}"){
             setLoading(true);
+            let referralCode;
+            ref ?  referralCode = ref :  referralCode = ''
             try {
-                const { data } = await axios.post(`${urls.baseUrl}/user`, form.values);
+                const { data } = await axios.post(`${urls.baseUrl}/user`,{...form.values, ...{ref:referralCode}});
                 if(data.message === 'success') {
                     form.setValues(initialValues);
                     setResponse(data.message);

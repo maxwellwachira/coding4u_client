@@ -90,7 +90,7 @@ const Home: NextPage = () => {
   
   //store cookie with 60 days expiry if referral code is available
   if(ref){
-    setCookie('ref', ref, {maxAge: 60*60*24*60});
+    setCookie('ref', ref, {maxAge: 5184000});
   }
 
   return (

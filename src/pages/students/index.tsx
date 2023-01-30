@@ -27,12 +27,11 @@ interface EnrolmentData {
 
 const StudentDashboard: NextPage = () => {
     const [enrolmentData, setEnrolmentData] = useState<EnrolmentData | null>(null);
+    const [refLink, setRefLink] = useState('');
     const { auth, userMe } = useAuthContext();
     const { width } = useViewportSize();
     const router = useRouter();
     let token = getCookie('accessToken');
-
-    const refLink = `https://coding-4u.com?ref=${userMe.referralCode}`;
 
     const getGreetings = () => {
         const date = new Date();
@@ -62,6 +61,8 @@ const StudentDashboard: NextPage = () => {
     useEffect(() => {
         if (!auth) router.push('/auth/logout');
         getEnrolments();
+
+        if (userMe.referralCode) setRefLink(`https://coding-4u.com?ref=${userMe.referralCode}`);
     }, [])
 
     if (!auth) return <></>;
@@ -72,7 +73,7 @@ const StudentDashboard: NextPage = () => {
                 <title>Coding4U Student Dashboard</title>
                 <meta name="description" content="Coding4U Student Dashboard" />
                 <link rel="icon" href="/favicon.ico" />
-            </Head>
+            </Head>s
             <StudentLayout>
                 <Container>
                     <Center>

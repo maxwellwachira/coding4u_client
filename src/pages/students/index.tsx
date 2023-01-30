@@ -63,7 +63,7 @@ const StudentDashboard: NextPage = () => {
         getEnrolments();
 
         if (userMe.referralCode) setRefLink(`https://coding-4u.com?ref=${userMe.referralCode}`);
-    }, [])
+    }, [userMe.referralCode])
 
     if (!auth) return <></>;
 
@@ -73,7 +73,7 @@ const StudentDashboard: NextPage = () => {
                 <title>Coding4U Student Dashboard</title>
                 <meta name="description" content="Coding4U Student Dashboard" />
                 <link rel="icon" href="/favicon.ico" />
-            </Head>s
+            </Head>
             <StudentLayout>
                 <Container>
                     <Center>

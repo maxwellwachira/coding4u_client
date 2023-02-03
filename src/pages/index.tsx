@@ -87,10 +87,10 @@ const Home: NextPage = () => {
   const { width } = useViewportSize();
   const router = useRouter();
   const { ref } = router.query;
-  
+
   //store cookie with 60 days expiry if referral code is available
-  if(ref){
-    setCookie('ref', ref, {maxAge: 5184000});
+  if (ref) {
+    setCookie('ref', ref, { expires: new Date(Date.now() + (60 * 24 * 60 * 60 * 1000)) });
   }
 
   return (
@@ -102,7 +102,7 @@ const Home: NextPage = () => {
       </Head>
       <MainLayout>
         <Box className={classes.heroGradient}>
-          <Container mt="xl">
+          <Container mt={width > 768 ? "xl" : 0}>
             <MediaQuery largerThan="md" styles={{ display: "none" }}>
               <Grid gutter={30}>
                 <Grid.Col md={6}>
@@ -113,6 +113,7 @@ const Home: NextPage = () => {
                       height={width >= 768 ? 500 : 350}
                       width={width >= 768 ? 500 : 310}
                       alt="Hero image"
+                      loading='eager'
                     />
                   </Center>
                 </Grid.Col>
@@ -378,7 +379,7 @@ const Home: NextPage = () => {
               </Text>
               <Text>In this course we will be using Node.js which is server-side JavaScript for backend development</Text>
               <Text>
-                 Prior programming knowledge in JavaScript is required.  Don't worry, you can enrol in our JavaScript course 
+                Prior programming knowledge in JavaScript is required.  Don't worry, you can enrol in our JavaScript course
               </Text>
               <Button
                 component='a'

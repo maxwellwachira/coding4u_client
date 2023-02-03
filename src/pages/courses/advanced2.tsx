@@ -126,8 +126,8 @@ const Advanced2: NextPage = () => {
     return (
         <>
             <Head>
-                <title>Coding4U | Advance Course 2</title>
-                <meta name="description" content="Coding4U Advance Course 2" />
+                <title>Coding4U | Node.js Course</title>
+                <meta name="description" content="Master the fundamentals of Node.js, Express.js and Backend development with our comprehensive online course. Start your journey today!" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <MainLayout>

@@ -97,7 +97,7 @@ const Home: NextPage = () => {
     <>
       <Head>
         <title>Coding4U | Home</title>
-        <meta name="description" content="Coding4U Home Page" />
+        <meta name="description" content="Learn to code from anywhere with our online coding school. Join a community of aspiring and professional developers, and master the latest programming languages and technologies. Start your journey today!" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <MainLayout>

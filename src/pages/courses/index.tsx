@@ -42,8 +42,8 @@ const Courses: NextPage = () => {
     return (
         <>
         <Head>
-            <title>Coding4U | Courses</title>
-            <meta name="description" content="Coding4U Courses" />
+            <title>Coding4U | All Courses</title>
+            <meta name="description" content="Discover a wide range of programming courses and learn from the best. Browse our complete list of online coding courses and start learning today." />
             <link rel="icon" href="/favicon.ico" />
         </Head>
         <MainLayout>

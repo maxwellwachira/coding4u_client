@@ -96,8 +96,8 @@ const Contact: NextPage = () => {
     return (
         <>
             <Head>
-                <title>Coding4U | Contact Us</title>
-                <meta name="description" content="Coding4U Contact Us Page" />
+                <title>Coding4U | Contact Us - Get in Touch with Our Team</title>
+                <meta name="description" content="Need to get in touch with the team at Coding4U School? Use our contact form, email or phone number to reach us. We're here to help" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <MainLayout>

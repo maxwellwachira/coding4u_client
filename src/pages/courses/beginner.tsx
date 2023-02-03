@@ -125,8 +125,8 @@ const Beginner: NextPage = () => {
     return (
         <>
             <Head>
-                <title>Coding4U | Beginner Courses</title>
-                <meta name="description" content="Coding4U Beginner Courses" />
+                <title>Coding4U | Scratch Programming Courses</title>
+                <meta name="description" content="Master the fundamentals of programming with our comprehensive online course. Start your journey today!" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <MainLayout>

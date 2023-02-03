@@ -28,7 +28,7 @@ export const useStyles = createStyles((theme) => ({
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
-        height: "120px",
+        height: "80px",
         width: "100%",
     },
 

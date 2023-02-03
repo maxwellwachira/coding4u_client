@@ -1,4 +1,4 @@
-import React, { ReactNode, useState } from 'react';
+import React, { ReactNode, useEffect, useState } from 'react';
 import {
   Anchor,
   AppShell,
@@ -16,6 +16,8 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 
 import { useStyles } from './mainLayout.styles';
+import { useViewportSize } from '@mantine/hooks';
+
 import logo from '../../assets/logo.jpeg';
 import { colors } from '../../constants/colors';
 import { useAuthContext } from '../../features/authentication';
@@ -29,23 +31,40 @@ const MainLayout = ({ children }: Props) => {
   const { classes } = useStyles();
   const { auth, userMe } = useAuthContext();
   const [opened, setOpened] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false)
   const router = useRouter();
+  const { width } = useViewportSize();
+
+  const detectScrollY = () => {
+    if (window.scrollY > 6) {
+      setIsScrolled(true);
+    } else {
+      setIsScrolled(false);
+    }
+  }
+
+  useEffect(() => {
+      window.addEventListener("scroll", detectScrollY);
+      return () => {
+        window.removeEventListener("scroll", detectScrollY);
+      }
+  }, [])
 
   return (
     <AppShell
         navbarOffsetBreakpoint="md"
         fixed
         header = {
-        <Header height={105} className={`${classes.headerBackground}`} withBorder={false}>
+        <Header height={width > 768 ? 105 : 80} className={`${classes.headerBackground}`} withBorder={false} style={{boxShadow: isScrolled? 'rgba(100, 100, 111, 0.2) 0px 7px 29px 0px': 'none'}}>
           <MediaQuery largerThan="md" styles={{ display: "none" }}>
             <div  className={classes.burger}>
               <Anchor href="/" ml="xl">
                 <Image 
                     src={logo}
-                    width={200}
-                    height={70}
+                    width={170}
+                    height={58}
                     alt='logo'
-                    
+                    loading='eager'
                 />
               </Anchor>
               <Burger
@@ -65,6 +84,7 @@ const MainLayout = ({ children }: Props) => {
                   width={220}
                   height={83}
                   alt='logo'
+                  loading='eager'
                 />
                
               </Anchor>

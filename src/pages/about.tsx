@@ -26,8 +26,8 @@ const About: NextPage = () => {
     return (
         <>
             <Head>
-                <title>Coding4U | About - Learn to Code with the Best</title>
-                <meta name="description" content="Discover more about Online Coding School and our mission to provide high-quality, accessible coding education to students around the world. Learn more about us." />
+                <title>About Coding4U | Learn to Code with the Best</title>
+                <meta name="description" content="Discover more about Coding4U School and our mission to provide high-quality, accessible coding education to students around the world. Learn more about us." />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <MainLayout>

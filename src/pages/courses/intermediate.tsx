@@ -125,7 +125,7 @@ const Intermediate: NextPage = () => {
     return (
         <>
         <Head>
-            <title>Coding4U | Intermediate Course</title>
+            <title>Coding4U | Web Development with HTML and CSS Course</title>
             <meta name="description" content="Master the fundamentals of web development with our comprehensive online course. Start your journey today!" />
             <link rel="icon" href="/favicon.ico" />
         </Head>

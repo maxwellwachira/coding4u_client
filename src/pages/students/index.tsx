@@ -55,7 +55,8 @@ const StudentDashboard: NextPage = () => {
     }
 
     const completedCourses = () => {
-        return enrolmentData?.enrolments.filter((el) => Number(el.progress) === 100);
+        if (!enrolmentData) return [];
+        return enrolmentData.enrolments.filter((el) => Number(el.progress) === 100);
     }
 
     useEffect(() => {
@@ -94,7 +95,7 @@ const StudentDashboard: NextPage = () => {
                                 <Stack justify="center" align="center">
                                     <IconSchool color={`${colors.primaryColor}`} size={45} />
                                     <Text size={20}>Active Courses</Text>
-                                    <Text size={23}>{Number(enrolmentData?.totalEnrolments) - (completedCourses() ? completedCourses.length : 0)}</Text>
+                                    <Text size={23}>{Number(enrolmentData?.totalEnrolments) - ( completedCourses() ? completedCourses().length : 0)}</Text>
                                 </Stack>
                             </Card>
                         </Grid.Col>

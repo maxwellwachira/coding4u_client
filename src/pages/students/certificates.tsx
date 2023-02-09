@@ -1,4 +1,4 @@
-import { Button, Card, Center, Container, createStyles, Divider, Grid, Modal, Stack, Text, TextInput } from '@mantine/core';
+import { Button, Card, Center, Container, createStyles, Divider, Grid, Modal, Notification, Stack, Text, TextInput } from '@mantine/core';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
@@ -9,7 +9,7 @@ import { getCookie } from 'cookies-next';
 import { useForm } from "@mantine/form";
 
 import { StudentLayout } from '../../layouts/studentLayout/studentLayout';
-import { IconCheck, IconTrophy } from '@tabler/icons';
+import { IconCheck, IconTrophy, IconX } from '@tabler/icons';
 import { colors } from '../../constants/colors';
 import { useAuthContext } from '../../features/authentication';
 import certificateMaker from '../../services/certificates/certificateMaker';
@@ -59,6 +59,7 @@ const Certificates: NextPage = () => {
     const [loading, setLoading] = useState(true);
     const [opened, setOpened] = useState(false);
     const [finishDate, setFinishDate] = useState('');
+    const [response, setResponse] = useState('');
     const [courseId, setCourseId] = useState<number | null>(null);
     const { auth, userMe } = useAuthContext();
 
@@ -125,7 +126,7 @@ const Certificates: NextPage = () => {
                             </Card.Section>
                         </Grid.Col>
                         <Grid.Col md={6}>
-                            <Stack align="center" justify="center" style={{height: "100%"}}>
+                            <Stack align="center" justify="center" style={{ height: "100%" }}>
                                 <Text align="center" fz={25} weight={600}> Congratulations!</Text>
                                 <Text align="center">Click the button below to download your {Number(el.CourseId) === 1 ? "Beginner" : "Intermediate"} certificate</Text>
                                 <Center>
@@ -156,10 +157,12 @@ const Certificates: NextPage = () => {
             try {
                 const { data } = await axios.post(`${urls.baseUrl}/cert`, certData);
                 if (data.message === 'success') {
+                    setResponse('success');
                     setLoading(false);
                     certificateMaker(data.record.id, courseId, certData.fullName, finishDate);
                 }
             } catch (error: any) {
+                setResponse('error');
                 console.log(error);
                 setLoading(false);
             }
@@ -220,34 +223,49 @@ const Certificates: NextPage = () => {
                     title="Confirm your name to download Certificate"
                 >
                     <Divider mb="lg" />
-                    <Container>
-                        <form onSubmit={form.onSubmit(() => handleSubmit())}>
-                            <Stack>
-                                <TextInput
-                                    withAsterisk
-                                    label="Full Name"
-                                    placeholder="Enter your full name"
-                                    value={form.values.fullName}
-                                    onChange={(event) => form.setFieldValue('fullName', event.currentTarget.value)}
-                                    mt="lg"
-                                    radius={15}
-                                    error={form.errors.categoryName}
-                                />
-                                <Button
-                                    rightIcon={<IconCheck />}
-                                    color="red"
-                                    my="lg"
-                                    type='submit'
-                                    loading={loading}
-                                    loaderPosition="left"
-                                    radius={15}
-                                >
-                                    Download Certificate
-                                </Button>
-                            </Stack>
-                        </form>
-                    </Container>
-
+                    {
+                        response === "success" ? (
+                            <Container>
+                                <Notification icon={<IconCheck size={18} />} color="teal" title="Success" closeButtonProps={{display: 'none'}}>
+                                    Certificate download was successful
+                                </Notification>
+                            </Container>
+                        ) : response === "error" ? (
+                            <Container>
+                                <Notification icon={<IconX size={18} />} color="red" title="Error" closeButtonProps={{display: 'none'}}>
+                                    Error downloading Certificate. Resfresh the page and try again.
+                                </Notification>
+                            </Container>
+                        ) : (
+                            <Container>
+                                <form onSubmit={form.onSubmit(() => handleSubmit())}>
+                                    <Stack>
+                                        <TextInput
+                                            withAsterisk
+                                            label="Full Name"
+                                            placeholder="Enter your full name"
+                                            value={form.values.fullName}
+                                            onChange={(event) => form.setFieldValue('fullName', event.currentTarget.value)}
+                                            mt="lg"
+                                            radius={15}
+                                            error={form.errors.categoryName}
+                                        />
+                                        <Button
+                                            rightIcon={<IconCheck />}
+                                            color="red"
+                                            my="lg"
+                                            type='submit'
+                                            loading={loading}
+                                            loaderPosition="left"
+                                            radius={15}
+                                        >
+                                            Download Certificate
+                                        </Button>
+                                    </Stack>
+                                </form>
+                            </Container>
+                        )
+                    }
                 </Modal>
             </StudentLayout>
         </>

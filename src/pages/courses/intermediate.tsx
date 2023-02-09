@@ -278,14 +278,9 @@ const Intermediate: NextPage = () => {
                                                 <List.Item>Justify Content</List.Item>
                                                 <List.Item>Align Items</List.Item>
                                             </List>
-                                            <Text weight={600}>Projects</Text>
-                                            <List withPadding>
-                                                <List.Item>Put HTML and CSS knowledge in use</List.Item>
-                                                <List.Item>Restaurant website</List.Item>
-                                            </List>
                                             <Text weight={600}>Student Project</Text>
                                             <List withPadding>
-                                                <List.Item>Create your portfolio website</List.Item>
+                                                <List.Item>Create a website of your choice</List.Item>
                                             </List>
                                         </Accordion.Panel>
                                      </Accordion.Item>      

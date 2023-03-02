@@ -292,7 +292,7 @@ const Advanced: NextPage = () => {
                                 <Card className={classes.cardShadow} radius={40} p="xl" withBorder>
                                     <Group position="apart">
                                         <Text size={24} weight={600} color={`${colors.primaryColor}`}>Price: </Text>
-                                        <Badge color="dark" size="lg">20,000 KES</Badge>
+                                        <Badge color="dark" size="lg">200 USD</Badge>
                                     </Group>
                                     <Text mt={20}>Explore Learn Innovate</Text>
                                     <Text mt={20}>Don't be left out, Enrol today</Text>

@@ -100,7 +100,7 @@ const Intermediate: NextPage = () => {
         }else {
             try {
                 const pesapalData = {
-                    amount : 15000,
+                    amount : 150,
                     email: userMe.email,
                     firstName: userMe.firstName,
                     lastName: userMe.lastName                   

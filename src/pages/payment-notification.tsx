@@ -42,7 +42,7 @@ const PaymentNotification: NextPage = () => {
             const { data } = await axios.post(`${urls.baseUrl}/pesapal/transaction-status`, postData );
             if (data.status_code === 1){
                 switch (data.amount) {
-                    case 25000:
+                    case 250:
                         const advanced2 = await enroll(userMe.id, '4');
                         if (advanced2?.message === "success"){
                             setResponse("Payment was successful");
@@ -51,7 +51,7 @@ const PaymentNotification: NextPage = () => {
                             }, 6000);
                         }
                         break;
-                    case 20000:
+                    case 200:
                         const advanced = await enroll(userMe.id, '3');
                         if (advanced?.message === "success"){
                             setResponse("Payment was successful");
@@ -60,7 +60,7 @@ const PaymentNotification: NextPage = () => {
                             }, 6000);
                         }
                         break;
-                    case 15000:
+                    case 150:
                         const intermediate = await enroll(userMe.id, '2');
                         if (intermediate?.message === "success"){
                             setResponse("Payment was successful");
@@ -69,7 +69,7 @@ const PaymentNotification: NextPage = () => {
                             }, 6000);
                         }
                         break;
-                    case 10000:
+                    case 100:
                         const beginner = await enroll(userMe.id, '1');
                         if (beginner?.message === "success"){
                             setResponse("Payment was successful");

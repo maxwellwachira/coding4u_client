@@ -42,6 +42,24 @@ const PaymentNotification: NextPage = () => {
             const { data } = await axios.post(`${urls.baseUrl}/pesapal/transaction-status`, postData );
             if (data.status_code === 1){
                 switch (data.amount) {
+                    case 649:
+                        const machineLearning = await enroll(userMe.id, '6');
+                        if (machineLearning?.message === "success"){
+                            setResponse("Payment was successful");
+                            setTimeout(() => {
+                                router.push('/students');
+                            }, 6000);
+                        }
+                        break;
+                    case 600:
+                        const web3 = await enroll(userMe.id, '5');
+                        if (web3?.message === "success"){
+                            setResponse("Payment was successful");
+                            setTimeout(() => {
+                                router.push('/students');
+                            }, 6000);
+                        }
+                        break;
                     case 250:
                         const advanced2 = await enroll(userMe.id, '4');
                         if (advanced2?.message === "success"){

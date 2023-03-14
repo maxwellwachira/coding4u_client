@@ -51,7 +51,7 @@ const PaymentNotification: NextPage = () => {
                             }, 6000);
                         }
                         break;
-                    case 600:
+                    case 599:
                         const web3 = await enroll(userMe.id, '5');
                         if (web3?.message === "success"){
                             setResponse("Payment was successful");
@@ -60,7 +60,7 @@ const PaymentNotification: NextPage = () => {
                             }, 6000);
                         }
                         break;
-                    case 250:
+                    case 249:
                         const advanced2 = await enroll(userMe.id, '4');
                         if (advanced2?.message === "success"){
                             setResponse("Payment was successful");
@@ -69,7 +69,7 @@ const PaymentNotification: NextPage = () => {
                             }, 6000);
                         }
                         break;
-                    case 200:
+                    case 199:
                         const advanced = await enroll(userMe.id, '3');
                         if (advanced?.message === "success"){
                             setResponse("Payment was successful");
@@ -78,7 +78,7 @@ const PaymentNotification: NextPage = () => {
                             }, 6000);
                         }
                         break;
-                    case 150:
+                    case 149:
                         const intermediate = await enroll(userMe.id, '2');
                         if (intermediate?.message === "success"){
                             setResponse("Payment was successful");
@@ -87,7 +87,7 @@ const PaymentNotification: NextPage = () => {
                             }, 6000);
                         }
                         break;
-                    case 100:
+                    case 99:
                         const beginner = await enroll(userMe.id, '1');
                         if (beginner?.message === "success"){
                             setResponse("Payment was successful");

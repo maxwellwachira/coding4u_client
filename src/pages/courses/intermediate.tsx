@@ -100,7 +100,7 @@ const Intermediate: NextPage = () => {
         }else {
             try {
                 const pesapalData = {
-                    amount : 150,
+                    amount : 149,
                     email: userMe.email,
                     firstName: userMe.firstName,
                     lastName: userMe.lastName                   
@@ -295,10 +295,10 @@ const Intermediate: NextPage = () => {
                             <Card className={classes.cardShadow} radius={40} p="xl" withBorder>
                                 <Group position="apart">
                                     <Text size={24} weight={600} color={`${colors.primaryColor}`}>Price: </Text>
-                                    <Badge color="dark" size="lg">150 USD</Badge>
+                                    <Badge color="dark" size="lg">149 USD</Badge>
                                 </Group>
                                 <Text mt={20}>Explore Learn Innovate</Text>
-                                <Text mt={20}>Don't be left out, Enrol today</Text>
+                                <Text mt={20}>Don't be left out, Enroll today</Text>
                                 <Center>
                                     {
                                         enrolled ?
@@ -307,7 +307,7 @@ const Intermediate: NextPage = () => {
                                         </Button> :
 
                                         <Button className={classes.enrolButton} size="md" onClick={onClick} loading={loading}>
-                                            Enrol
+                                            Enroll
                                         </Button>
                                     }
                                 </Center>

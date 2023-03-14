@@ -17,6 +17,8 @@ import iot from '../assets/js.png';
 import FooterLinks from '../components/footer/footer';
 import { footerData } from '../constants/footer';
 import Subscribe from '../components/subscribe/subscribe';
+import blockchainImage from '../assets/blockchain.jpg';
+import aiImage from '../assets/ai.jpg';
 
 const useStyles = createStyles((theme) => ({
   cardWidth: {
@@ -279,8 +281,62 @@ const Home: NextPage = () => {
             Our courses are categorized into three groups. From Beginner courses all the way to advanced courses. We train students from as young as 10 years old all the way up - we have no upper age limit.
           </Text>
           <Text mb="xl">No prior programming experience is required to enrol in some of our programs. You will join as an amateur and leave as an expert </Text>
-          <Text className={`${classes.primaryText}`} mt="xl" component='h1' size={27}>Beginner Package</Text>
+          <Text className={`${classes.primaryText}`} mt="xl" component='h1' size={27}>Web3 and Blockchain</Text>
           <Grid gutter={50}>
+            <Grid.Col md={6}>
+              <Center>
+                <Image
+                  src={blockchainImage}
+                  height={width >= 768 ? 300 : 300}
+                  width={width >= 768 ? 420 : 300}
+                  alt="Web3 & Blockchain"
+                />
+              </Center>
+            </Grid.Col>
+            <Grid.Col md={6}>
+              <Text mt="sm">
+                Students in this course will learn <Text component='span' weight={600}>Web3 and Blockchain</Text>
+              </Text>
+              <Text>This Web3 course is designed to provide students with a comprehensive understanding of the Ethereum ecosystem, including the development of decentralized applications, smart contracts, and NFTs. The course will cover the basics of Solidity programming language, advanced Solidity concepts, security best practices, and the creation of decentralized applications and DeFi protocols. In addition, students will gain an understanding of the ERC-721 and ERC-1155 token standards and learn how to create, deploy and interact with NFTs using Web3.js.</Text>
+
+              <Button
+                component='a'
+                href='/courses/web3'
+                className={classes.exploreButton}
+              >
+                Explore Course
+              </Button>
+            </Grid.Col>
+            </Grid>
+            <Text className={`${classes.primaryText}`} mt="xl" component='h1' size={27}>AI & Machine Learning</Text>
+            <Grid gutter={50}>
+            <Grid.Col md={6}>
+              <Text mt="sm">
+                Students in this course will learn <Text component='span' weight={600}>AI & Machine Learning</Text>
+              </Text>
+              <Text>Our AI and Machine Learning Course offers a comprehensive curriculum that covers the latest techniques and tools in this exciting field. With hands-on projects and expert guidance, you'll build a solid foundation in deep learning, reinforcement learning, and ethical considerations, and be well-equipped to tackle real-world challenges. Join us and master the fundamentals of AI and machine learning today.</Text>
+
+              <Button
+                component='a'
+                href='/courses/machine-learning'
+                className={classes.exploreButton}
+              >
+                Explore Course
+              </Button>
+            </Grid.Col>
+            <Grid.Col md={6}>
+              <Center>
+                <Image
+                  src={aiImage}
+                  height={width >= 768 ? 300 : 300}
+                  width={width >= 768 ? 420 : 300}
+                  alt="Machine Learning"
+                />
+              </Center>
+            </Grid.Col>
+            </Grid>
+            <Text className={`${classes.primaryText}`} mt="xl" component='h1' size={27}>Beginners Package</Text>
+            <Grid gutter={50}>
             <Grid.Col md={6}>
               <Center>
                 <Image

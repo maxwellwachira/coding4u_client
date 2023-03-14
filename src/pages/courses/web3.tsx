@@ -144,7 +144,7 @@ const Intermediate: NextPage = () => {
                 >
                     Go Back
                 </Button>
-                <Text align="center" size={32} weight={600} color={`${colors.primaryColor}`}>Web3 Course</Text>
+                <Text align="center" size={32} weight={600} color={`${colors.primaryColor}`}>Web3  & Blockchain Course</Text>
                 <Grid mb="xl">
                     <Grid.Col md={8}>
                         <Center>
